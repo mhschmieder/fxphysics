@@ -29,7 +29,11 @@
  * Project: https://github.com/mhschmieder/fxphysicstoolkit
  */
 /**
- * Data model support for physics-related GUI elements, using JavaFX observable
- * properties.
+ * This package contains the FxPhysicsToolkit Library's layout managers for
+ * physics-based GUI controls.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-package com.mhschmieder.fxphysicstoolkit.model;
+package com.mhschmieder.fxphysicstoolkit.layout;

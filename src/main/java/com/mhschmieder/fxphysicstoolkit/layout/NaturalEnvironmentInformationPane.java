@@ -32,7 +32,7 @@ package com.mhschmieder.fxphysicstoolkit.layout;
 
 import java.text.NumberFormat;
 
-import com.mhschmieder.commonstoolkit.text.StringUtilities;
+import com.mhschmieder.commonstoolkit.lang.StringConstants;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
@@ -70,7 +70,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
     @SuppressWarnings("nls") public static final String TEMPERATURE_LABEL_DEFAULT       =
                                                                                   TEMPERATURE_LABEL_LABEL
                                                                                           + " = 20"
-                                                                                          + StringUtilities.DEGREES_CELSIUS;
+                                                                                          + StringConstants.DEGREES_CELSIUS;
     @SuppressWarnings("nls") public static final String PRESSURE_LABEL_DEFAULT          =
                                                                                PRESSURE_LABEL_LABEL
                                                                                        + " = 101325 "

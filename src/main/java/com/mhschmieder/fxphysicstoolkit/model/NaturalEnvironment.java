@@ -178,20 +178,28 @@ public final class NaturalEnvironment {
     }
 
     public double getPressure( final PressureUnit pPressureUnit ) {
+        double pressure = Double.NaN;
+        
         switch ( pPressureUnit ) {
         case KILOPASCALS:
-            return getPressureKpa();
+            pressure = getPressureKpa();
+            break;
         case PASCALS:
-            return getPressurePa();
+            pressure = getPressurePa();
+            break;
         case MILLIBARS:
-            return getPressureMb();
+            pressure = getPressureMb();
+            break;
         case ATMOSPHERES:
-            return getPressureAtm();
+            pressure = getPressureAtm();
+            break;
         default:
             final String errMessage = "Unexpected PressureUnit " //$NON-NLS-1$
                     + pPressureUnit;
             throw new IllegalArgumentException( errMessage );
         }
+        
+        return pressure;
     }
 
     public double getPressureAtm() {
@@ -211,18 +219,25 @@ public final class NaturalEnvironment {
     }
 
     public double getTemperature( final TemperatureUnit pTemperatureUnit ) {
+        double temperature = Double.NaN;
+        
         switch ( pTemperatureUnit ) {
         case KELVIN:
-            return getTemperatureK();
+            temperature = getTemperatureK();
+            break;
         case CELSIUS:
-            return getTemperatureC();
+            temperature = getTemperatureC();
+            break;
         case FAHRENHEIT:
-            return getTemperatureF();
+            temperature = getTemperatureF();
+            break;
         default:
             final String errMessage = "Unexpected TemperatureUnit " //$NON-NLS-1$
                     + pTemperatureUnit;
             throw new IllegalArgumentException( errMessage );
         }
+        
+        return temperature;
     }
 
     public double getTemperatureC() {

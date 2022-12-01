@@ -71,6 +71,8 @@ public class PhysicsDialogUtilities {
         final ButtonType buttonType = response.get();
 
         // Handle the full enumeration of potential responses.
+        Point2D coordinates = coordinatesCandidate;
+        
         switch ( buttonType.getButtonData() ) {
         case HELP:
         case HELP_2:
@@ -78,11 +80,11 @@ public class PhysicsDialogUtilities {
         case CANCEL_CLOSE:
             // These options equate to cancellation.
             // If the user cancels, return the initial coordinates.
-            return coordinatesCandidate;
+            break;
         case NO:
             // This case is currently unsupported, but would be like a
             // Cancel.
-            return coordinatesCandidate;
+            break;
         case APPLY:
         case FINISH:
         case NEXT_FORWARD:
@@ -92,8 +94,9 @@ public class PhysicsDialogUtilities {
             confirmCoordinatesDialog.syncModelToView();
 
             // Return the newly confirmed coordinates.
-            final Point2D confirmedCoordinates = confirmCoordinatesDialog.getCoordinatesCandidate();
-            return confirmedCoordinates;
+            coordinates = confirmCoordinatesDialog.getCoordinatesCandidate();
+            
+            break;
         case BIG_GAP:
         case SMALL_GAP:
         case LEFT:
@@ -101,9 +104,11 @@ public class PhysicsDialogUtilities {
         case OTHER:
             // It is unlikely that these cases will ever be called, but it
             // is safest to treat them like a Cancel.
-            return coordinatesCandidate;
+            break;
         default:
-            return coordinatesCandidate;
+            break;
         }
+        
+        return coordinates;
     }
 }

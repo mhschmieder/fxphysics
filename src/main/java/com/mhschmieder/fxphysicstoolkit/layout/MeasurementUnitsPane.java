@@ -142,7 +142,7 @@ public final class MeasurementUnitsPane extends VBox {
     private void initPane( final ClientProperties pClientProperties ) {
         final Label distanceUnitLabel = GuiUtilities.getControlLabel( "Distance Unit" ); //$NON-NLS-1$
         _distanceUnitSelector = new DistanceUnitSelector( pClientProperties,
-                                                          false,
+                                                          true,
                                                           false,
                                                           DistanceUnit.defaultValue() );
 
@@ -153,17 +153,17 @@ public final class MeasurementUnitsPane extends VBox {
 
         final Label weightUnitLabel = GuiUtilities.getControlLabel( "Weight Unit" ); //$NON-NLS-1$
         _weightUnitSelector = new WeightUnitSelector( pClientProperties,
-                                                      false,
+                                                      true,
                                                       WeightUnit.defaultValue() );
 
         final Label temperatureUnitLabel = GuiUtilities.getControlLabel( "Temperature Unit" ); //$NON-NLS-1$
         _temperatureUnitSelector = new TemperatureUnitSelector( pClientProperties,
-                                                                false,
+                                                                true,
                                                                 TemperatureUnit.defaultValue() );
 
         final Label pressureUnitLabel = GuiUtilities.getControlLabel( "Pressure Unit" ); //$NON-NLS-1$
         _pressureUnitSelector = new PressureUnitSelector( pClientProperties,
-                                                          false,
+                                                          true,
                                                           PressureUnit.defaultValue() );
 
         // Create a grid to host the Measurement Units controls.

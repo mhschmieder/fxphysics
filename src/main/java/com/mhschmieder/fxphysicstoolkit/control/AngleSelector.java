@@ -57,9 +57,9 @@ public final class AngleSelector extends DoubleSelector {
 
     public AngleSelector( final ClientProperties clientProperties,
                           final String tooltipText,
-                          final boolean toolbarContext ) {
+                          final boolean applyToolkitCss ) {
         // Always call the superclass constructor first!
-        super( clientProperties, 0, 1, 0, 1, true, tooltipText, toolbarContext, false, false );
+        super( clientProperties, 0, 1, 0, 1, true, tooltipText, applyToolkitCss, false, false );
 
         _angleUnit = AngleUnit.defaultValue();
 

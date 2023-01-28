@@ -50,11 +50,11 @@ public final class AngleUnitSelector extends TextSelector {
                                                                      .toCanonicalString() };
 
     public AngleUnitSelector( final ClientProperties clientProperties,
-                              final boolean toolbarContext ) {
+                              final boolean applyToolkitCss ) {
         // Always call the superclass constructor first!
         super( clientProperties,
                "Supported Angle Units", //$NON-NLS-1$
-               toolbarContext,
+               applyToolkitCss,
                false,
                false,
                ANGLE_UNITS,

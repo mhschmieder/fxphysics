@@ -73,13 +73,13 @@ public class DistanceUnitSelector extends TextSelector {
                                                                                   .toCanonicalString() };
 
     public DistanceUnitSelector( final ClientProperties clientProperties,
-                                 final boolean toolbarContext,
+                                 final boolean applyToolkitCss,
                                  final boolean includeChooseOne,
                                  final DistanceUnit distanceUnit ) {
         // Always call the superclass constructor first!
         super( clientProperties,
                "Supported Distance Units", //$NON-NLS-1$
-               toolbarContext,
+               applyToolkitCss,
                false,
                false,
                includeChooseOne ? DISTANCE_UNITS_AMBIGUOUS : DISTANCE_UNITS_KNOWN,

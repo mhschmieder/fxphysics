@@ -49,12 +49,12 @@ public final class PressureUnitSelector extends TextSelector {
                                                                           .toCanonicalString() };
 
     public PressureUnitSelector( final ClientProperties clientProperties,
-                                 final boolean toolbarContext,
+                                 final boolean applyToolkitCss,
                                  final PressureUnit pressureUnitDefault ) {
         // Always call the superclass constructor first!
         super( clientProperties,
                "Supported Pressure Units", //$NON-NLS-1$
-               toolbarContext,
+               applyToolkitCss,
                false,
                false,
                PRESSURE_UNITS,

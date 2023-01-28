@@ -52,12 +52,12 @@ public final class WeightUnitSelector extends TextSelector {
                                                                       .toCanonicalString() };
 
     public WeightUnitSelector( final ClientProperties clientProperties,
-                               final boolean toolbarContext,
+                               final boolean applyToolkitCss,
                                final WeightUnit weightUnit ) {
         // Always call the superclass constructor first!
         super( clientProperties,
                "Supported Weight Units", //$NON-NLS-1$
-               toolbarContext,
+               applyToolkitCss,
                false,
                false,
                WEIGHT_UNITS,

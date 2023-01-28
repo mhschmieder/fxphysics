@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2023 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -43,12 +43,19 @@ public class WeightEditor extends DoubleEditor {
     // //////////////////////////////////////////////////////////////////////////
     // Constructors and Initialization
     public WeightEditor( final ClientProperties clientProperties,
-                         final String text,
+                         final String initialText,
                          final String tooltipText ) {
         // Always call the superclass constructor first!
         // NOTE: We use up to two decimal place of precision for displaying
         // weight, and ten decimal places for parsing weight.
-        super( clientProperties, text, tooltipText, 0, 2, 0, 10 );
+        super( clientProperties, 
+               initialText, 
+               tooltipText, 
+               true,
+               0, 
+               2, 
+               0, 
+               10 );
 
         _weightUnit = WeightUnit.defaultValue();
 

@@ -49,12 +49,12 @@ public final class TemperatureUnitSelector extends TextSelector {
                                                                              .toCanonicalString() };
 
     public TemperatureUnitSelector( final ClientProperties clientProperties,
-                                    final boolean toolbarContext,
+                                    final boolean applyToolkitCss,
                                     final TemperatureUnit temperatureUnitDefault ) {
         // Always call the superclass constructor first!
         super( clientProperties,
                "Supported Temperature Units", //$NON-NLS-1$
-               toolbarContext,
+               applyToolkitCss,
                false,
                false,
                TEMPERATURE_UNITS,

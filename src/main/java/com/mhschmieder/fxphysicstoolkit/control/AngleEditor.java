@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxphysicstoolkit.control;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
 
@@ -68,7 +70,7 @@ public class AngleEditor extends DoubleEditor {
     public double getClampedValue( final double unclampedValue ) {
         // If the allowed angle range is a full period or more (360+ degrees),
         // then unwrap the angle. Otherwise, apply standard min/max clamping.
-        final double clampedValue = ( Math.abs( _maximumValue - _minimumValue ) >= 360d )
+        final double clampedValue = ( FastMath.abs( _maximumValue - _minimumValue ) >= 360d )
             ? getUnwrappedAngleDegrees( unclampedValue )
             : super.getClampedValue( unclampedValue );
 

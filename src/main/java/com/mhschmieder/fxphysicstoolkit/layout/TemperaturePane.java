@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxphysicstoolkit.layout;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
@@ -99,7 +101,7 @@ public final class TemperaturePane extends VBox {
             // errors in slider value when changing units, but wrap this
             // in a JavaFX runLater thread to ensure all FX event code
             // precedes the custom selection.
-            if ( ( Math.abs( storedValue - sliderValue ) >= epsilon ) ) {
+            if ( ( FastMath.abs( storedValue - sliderValue ) >= epsilon ) ) {
                 Platform.runLater( () -> setTemperatureK( sliderValue ) );
             }
         } );

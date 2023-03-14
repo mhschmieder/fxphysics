@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxphysicstoolkit.control;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.NumberSlider;
 import com.mhschmieder.physicstoolkit.AngleUnit;
@@ -92,9 +94,9 @@ public final class AngleSlider extends NumberSlider {
     public double getClampedValue( final double unclampedValue ) {
         // If the allowed angle range is a full period or more (360+ degrees),
         // then unwrap the angle. Otherwise, apply standard min/max clamping.
-        final double clampedValue = ( Math.abs( getMax() - getMin() ) >= 360d )
+        final double clampedValue = ( FastMath.abs( getMax() - getMin() ) >= 360d )
             ? getUnwrappedAngleDegrees( unclampedValue )
-            : Math.min( Math.max( unclampedValue, getMin() ), getMax() );
+            : FastMath.min( FastMath.max( unclampedValue, getMin() ), getMax() );
 
         return clampedValue;
     }

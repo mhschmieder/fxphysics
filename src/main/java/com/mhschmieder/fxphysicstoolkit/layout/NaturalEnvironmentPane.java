@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxphysicstoolkit.layout;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
@@ -118,7 +120,7 @@ public final class NaturalEnvironmentPane extends HBox {
                     // errors in slider value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
-                    if ( ( Math.abs( storedValue - sliderValue ) >= eps ) ) {
+                    if ( ( FastMath.abs( storedValue - sliderValue ) >= eps ) ) {
                         Platform.runLater( () -> _pressurePane.setPressurePa( sliderValue ) );
                     }
 
@@ -129,15 +131,15 @@ public final class NaturalEnvironmentPane extends HBox {
                     // since it appears to only look at specific cutoff values
                     // vs. entire ranges of values between the altitude choices.
                     eps = 1e-2;
-                    if ( Math.abs( sliderValue
+                    if ( FastMath.abs( sliderValue
                             - PhysicsConstants.PRESSURE_LOW_ALTITUDE_PA ) <= eps ) {
                         _altitudePane.setAltitude( Altitude.LOW );
                     }
-                    else if ( Math.abs( sliderValue
+                    else if ( FastMath.abs( sliderValue
                             - PhysicsConstants.PRESSURE_MEDIUM_ALTITUDE_PA ) <= eps ) {
                         _altitudePane.setAltitude( Altitude.MEDIUM );
                     }
-                    else if ( Math.abs( sliderValue
+                    else if ( FastMath.abs( sliderValue
                             - PhysicsConstants.PRESSURE_HIGH_ALTITUDE_PA ) <= eps ) {
                         _altitudePane.setAltitude( Altitude.HIGH );
                     }

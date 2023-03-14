@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.fxphysicstoolkit.layout;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.geometry.Extents2D;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
@@ -109,7 +111,7 @@ public final class ExtentsPane extends GridPane {
                     // errors in editor value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
-                    if ( ( Math.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
+                    if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
                         Platform.runLater( () -> setMinimumX( editorValue ) );
                     }
                 } );
@@ -123,7 +125,7 @@ public final class ExtentsPane extends GridPane {
                     // errors in editor value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
-                    if ( ( Math.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
+                    if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
                         Platform.runLater( () -> setMinimumY( editorValue ) );
                     }
                 } );
@@ -137,7 +139,7 @@ public final class ExtentsPane extends GridPane {
                     // errors in editor value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
-                    if ( ( Math.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
+                    if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
                         Platform.runLater( () -> setSizeX( editorValue ) );
                     }
                 } );
@@ -151,7 +153,7 @@ public final class ExtentsPane extends GridPane {
                     // errors in editor value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
-                    if ( ( Math.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
+                    if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
                         Platform.runLater( () -> setSizeY( editorValue ) );
                     }
                 } );

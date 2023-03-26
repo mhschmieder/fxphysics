@@ -58,7 +58,7 @@ public class PhysicsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "settings",
                                          "naturalEnvironment",
-                                         "/com/physics/resources/NaturalEnvironment16.png" );
+                                         "/icons/mhschmieder/NaturalEnvironment16.png" );
     }
 
     @SuppressWarnings("nls")

@@ -38,5 +38,6 @@
 	<classpathentry kind="src" path="/fxguitoolkit"/>
 	<classpathentry kind="src" path="/fxgraphicstoolkit"/>
 	<classpathentry kind="src" path="/officetoolkit"/>
+	<classpathentry kind="src" path="/guitoolkit"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

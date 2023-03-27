@@ -206,7 +206,7 @@ public final class NaturalEnvironmentStage extends XStage {
     @SuppressWarnings("nls")
     protected void initStage( final boolean resizable ) {
         // First have the superclass initialize its content.
-        initStage( "/com/meyersound/analysis/resources/NaturalEnvironment16.png",
+        initStage( "/icons/mhschmieder/NaturalEnvironment16.png",
                    NATURAL_ENVIRONMENT_STAGE_WIDTH_DEFAULT,
                    NATURAL_ENVIRONMENT_STAGE_HEIGHT_DEFAULT,
                    resizable );

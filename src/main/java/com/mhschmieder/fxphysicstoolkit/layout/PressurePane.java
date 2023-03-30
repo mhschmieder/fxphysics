@@ -65,7 +65,7 @@ public final class PressurePane extends VBox {
 
     // Cache the number converter so its units and extrema can be changed later
     // when the Pressure Unit changes.
-    // protected NumberConverter _numberConverter;
+    // protected DoubleConverter _numberConverter;
 
     public PressurePane( final ClientProperties clientProperties ) {
         // Always call the superclass constructor first!
@@ -125,7 +125,7 @@ public final class PressurePane extends VBox {
 
         // Cache a number converter so we can keep it up to date with the
         // Pressure Unit, which can change at any time.
-        // _numberConverter = new NumberConverter(
+        // _numberConverter = new DoubleConverter(
         // PressureUnit.PASCALS.toPresentationString(),
         // _pressureEditor
         // .getNumberFormat(),

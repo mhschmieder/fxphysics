@@ -39,5 +39,10 @@
 	<classpathentry kind="src" path="/fxgraphicstoolkit"/>
 	<classpathentry kind="src" path="/officetoolkit"/>
 	<classpathentry kind="src" path="/guitoolkit"/>
+	<classpathentry kind="lib" path="/server/deployment/jars/commons-math3-3.6.1.jar" sourcepath="/server/deployment/jars/commons-math3-3.6.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/server/deployment/jars/commons-math3-3.6.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

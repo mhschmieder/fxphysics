@@ -6,12 +6,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mhschmieder</groupId>
-    <artifactId>fxphysicstoolkit</artifactId>
+    <artifactId>fxphysicsgui</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>FxPhysicsToolkit</name>
-	<url>https://github.com/mhschmieder/fxphysicstoolkit </url>
+	<name>FxPhysicsGui</name>
+	<url>https://github.com/mhschmieder/fxphysicsgui </url>
 	<description>JavaFX GUI and observable properties for physics concepts.</description>
 
 	<licenses>
@@ -23,9 +23,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/mhschmieder/fxphysicstoolkit </url>
-		<connection>scm:git:git://github.com/mhschmieder/fxguitoolkit.git</connection>
-		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysicstoolkit.git</developerConnection>
+		<url>https://github.com/mhschmieder/fxphysicsgui </url>
+		<connection>scm:git:git://github.com/mhschmieder/fxphysicsgui.git</connection>
+		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysicsgui.git</developerConnection>
 	</scm>
 
 	<developers>

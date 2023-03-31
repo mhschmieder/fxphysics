@@ -1,4 +1,4 @@
-# fxphysicstoolkit
+# fxphysicsgui
 JavaFX GUI support (including data model property bindings) for my physicstoolkit library
 
 This library is split off from my FxGuiToolkit, as physics is a large umbrella for many concepts that don't come up in lots of applications that are more run-of-the-mill than the scientific and engineering desktop applicationsd that I tend to work on.

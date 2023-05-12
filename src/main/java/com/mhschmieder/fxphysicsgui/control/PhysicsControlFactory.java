@@ -140,7 +140,7 @@ public class PhysicsControlFactory {
                                                            final int maxFractionDigitsFormat,
                                                            final int minFractionDigitsParse,
                                                            final int maxFractionDigitsParse ) {
-        // Use the current slider value and limits to set the number editor.
+        // Use the current slider value and limits to set the number textField.
         final AngleEditor angleEditor = makeAngleEditor( clientProperties,
                                                          null,
                                                          minFractionDigitsFormat,
@@ -189,7 +189,7 @@ public class PhysicsControlFactory {
         return pressureEditor;
     }
 
-    // Helper method to get a humidity editor to pair with a slider.
+    // Helper method to get a humidity textField to pair with a slider.
     public static final HumidityEditor makeHumiditySliderEditor( final ClientProperties clientProperties,
                                                                  final HumiditySlider humiditySlider ) {
         // Get the current slider value and format it as initial text.

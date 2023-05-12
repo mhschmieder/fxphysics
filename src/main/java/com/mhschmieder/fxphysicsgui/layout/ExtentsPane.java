@@ -100,7 +100,7 @@ public final class ExtentsPane extends GridPane {
 
         // NOTE: Editors might switch presentation units, whereas JavaFX Bean
         // Properties are specified with a single unchanging unit, so we have to
-        // be careful to only sync the cached Distance property to the editor
+        // be careful to only sync the cached Distance property to the textField
         // when a real magnitude change occurred vs. a Distance Unit change.
         _minimumPane._xPositionEditor.valueProperty()
                 .addListener( ( observableValue, oldValue, newValue ) -> {
@@ -108,7 +108,7 @@ public final class ExtentsPane extends GridPane {
                     final double editorValue = _minimumPane._xPositionEditor.getDistanceMeters();
 
                     // Make sure we don't set dirty flag because of round-off
-                    // errors in editor value when changing units, but wrap this
+                    // errors in textField value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
                     if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
@@ -122,7 +122,7 @@ public final class ExtentsPane extends GridPane {
                     final double editorValue = _minimumPane._yPositionEditor.getDistanceMeters();
 
                     // Make sure we don't set dirty flag because of round-off
-                    // errors in editor value when changing units, but wrap this
+                    // errors in textField value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
                     if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
@@ -136,7 +136,7 @@ public final class ExtentsPane extends GridPane {
                     final double editorValue = _sizePane._xPositionEditor.getDistanceMeters();
 
                     // Make sure we don't set dirty flag because of round-off
-                    // errors in editor value when changing units, but wrap this
+                    // errors in textField value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
                     if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {
@@ -150,7 +150,7 @@ public final class ExtentsPane extends GridPane {
                     final double editorValue = _sizePane._yPositionEditor.getDistanceMeters();
 
                     // Make sure we don't set dirty flag because of round-off
-                    // errors in editor value when changing units, but wrap this
+                    // errors in textField value when changing units, but wrap this
                     // in a JavaFX runLater thread to ensure all FX event code
                     // precedes the custom selection.
                     if ( ( FastMath.abs( storedValue - editorValue ) >= EPSILON_TOLERANCE ) ) {

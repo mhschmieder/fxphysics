@@ -118,7 +118,7 @@ public final class PressurePane extends VBox {
         // Create a default Pressure Slider.
         _pressureSlider = new PressureSlider( clientProperties );
 
-        // Conform the associated editor (text field) to the slider attributes.
+        // Conform the associated textField (text field) to the slider attributes.
         _pressureEditor = PhysicsControlFactory.makePressureEditor( clientProperties );
         _pressureEditor.setPrefWidth( 100d );
         _pressureEditor.setMaxWidth( 100d );
@@ -234,7 +234,7 @@ public final class PressurePane extends VBox {
         _pressureEditor.updatePressureUnit( pressureUnit );
 
         // In order to avoid order-dependency and initial condition Catch-22's,
-        // always set the editor's value to match the paired slider's value.
+        // always set the textField's value to match the paired slider's value.
         // NOTE: This doesn't fix the startup problem of the value being the
         // minimum allowed, when the user's cached unit is the default unit.
         Platform.runLater( () -> _pressureEditor.setValue( _pressureSlider.getValue() ) );

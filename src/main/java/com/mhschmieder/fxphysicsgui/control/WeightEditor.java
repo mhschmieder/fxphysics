@@ -42,13 +42,13 @@ public class WeightEditor extends DoubleEditor {
 
     // //////////////////////////////////////////////////////////////////////////
     // Constructors and Initialization
-    public WeightEditor( final ClientProperties clientProperties,
+    public WeightEditor( final ClientProperties pClientProperties,
                          final String initialText,
                          final String tooltipText ) {
         // Always call the superclass constructor first!
         // NOTE: We use up to two decimal place of precision for displaying
         // weight, and ten decimal places for parsing weight.
-        super( clientProperties, 
+        super( pClientProperties, 
                initialText, 
                tooltipText, 
                true,
@@ -142,8 +142,7 @@ public class WeightEditor extends DoubleEditor {
 
         setValue( weightCurrent );
 
-        // Set the embedded unit label in the generic number editor.
+        // Set the embedded unit label in the generic number textField.
         setMeasurementUnitString( _weightUnit.toPresentationString() );
     }
-
 }

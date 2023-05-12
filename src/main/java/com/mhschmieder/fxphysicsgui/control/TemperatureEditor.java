@@ -48,7 +48,7 @@ public final class TemperatureEditor extends DoubleEditor {
 
     // //////////////////////////////////////////////////////////////////////////
     // Constructors and Initialization
-    public TemperatureEditor( final ClientProperties clientProperties,
+    public TemperatureEditor( final ClientProperties pClientProperties1,
                               final String initialText,
                               final String tooltipText,
                               final double minimumTemperatureK,
@@ -57,7 +57,7 @@ public final class TemperatureEditor extends DoubleEditor {
         // Always call the superclass constructor first!
         // NOTE: We use up to two decimal places of precision for displaying
         // temperature, and six decimal places for parsing Temperature.
-        super( clientProperties,
+        super( pClientProperties1,
                initialText,
                tooltipText,
                true,
@@ -149,8 +149,7 @@ public final class TemperatureEditor extends DoubleEditor {
         setMinimumTemperatureK( PhysicsConstants.TEMPERATURE_MINIMUM_K );
         setMaximumTemperatureK( PhysicsConstants.TEMPERATURE_MAXIMUM_K );
 
-        // Set the embedded unit label in the generic number editor.
+        // Set the embedded unit label in the generic number textField.
         setMeasurementUnitString( _temperatureUnit.toPresentationString() );
     }
-
 }

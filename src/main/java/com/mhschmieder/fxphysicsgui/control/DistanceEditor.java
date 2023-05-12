@@ -45,13 +45,13 @@ public class DistanceEditor extends DoubleEditor {
     // Store the Distance Unit so we'll know when we need to convert.
     private DistanceUnit       _distanceUnit;
 
-    public DistanceEditor( final ClientProperties clientProperties,
+    public DistanceEditor( final ClientProperties pClientProperties,
                            final String initialText,
                            final String tooltipText ) {
         // Always call the superclass constructor first!
         // NOTE: We use up to two decimal place of precision for displaying
         // distance, and ten decimal places for parsing Distance.
-        super( clientProperties, 
+        super( pClientProperties, 
                initialText, 
                tooltipText, 
                true,
@@ -149,8 +149,7 @@ public class DistanceEditor extends DoubleEditor {
         setMaximumValue( maximumDistance );
         setValue( distanceCurrent );
 
-        // Set the embedded unit string in the generic number editor.
+        // Set the embedded unit string in the generic number textField.
         setMeasurementUnitString( _distanceUnit.toPresentationString() );
     }
-
 }

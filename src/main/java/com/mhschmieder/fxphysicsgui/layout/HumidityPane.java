@@ -99,7 +99,7 @@ public final class HumidityPane extends VBox {
         // Create a Relative Humidity slider.
         _humiditySlider = new HumiditySlider( clientProperties );
 
-        // Conform the associated editor (text field) to the slider attributes.
+        // Conform the associated textField (text field) to the slider attributes.
         _humidityEditor = PhysicsControlFactory.makeHumiditySliderEditor( clientProperties,
                                                                           _humiditySlider );
         _humidityEditor.setPrefWidth( 100d );

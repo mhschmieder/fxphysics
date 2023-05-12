@@ -48,7 +48,7 @@ public class PressureEditor extends DoubleEditor {
 
     // //////////////////////////////////////////////////////////////////////////
     // Constructors and Initialization
-    public PressureEditor( final ClientProperties clientProperties,
+    public PressureEditor( final ClientProperties pClientProperties,
                            final String initialText,
                            final String tooltipText,
                            final double minimumPressurePa,
@@ -57,7 +57,7 @@ public class PressureEditor extends DoubleEditor {
         // Always call the superclass constructor first!
         // NOTE: We use up to four decimal places of precision for displaying
         // pressure, and ten decimal places for parsing Pressure.
-        super( clientProperties,
+        super( pClientProperties,
                initialText,
                tooltipText,
                true,
@@ -149,7 +149,7 @@ public class PressureEditor extends DoubleEditor {
         setMinimumPressurePa( PhysicsConstants.PRESSURE_MINIMUM_PA );
         setMaximumPressurePa( PhysicsConstants.PRESSURE_MAXIMUM_PA );
 
-        // Set the embedded unit label in the generic number editor.
+        // Set the embedded unit label in the generic number textField.
         setMeasurementUnitString( _pressureUnit.toPresentationString() );
     }
 

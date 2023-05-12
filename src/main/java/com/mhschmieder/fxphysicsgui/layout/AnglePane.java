@@ -69,7 +69,7 @@ public class AnglePane extends VBox {
         // Create a default Angle Slider.
         _angleSlider = new AngleSlider( clientProperties, useContextMenu );
 
-        // Conform the associated editor (text field) to the slider attributes.
+        // Conform the associated textField (text field) to the slider attributes.
         _angleEditor =
                      PhysicsControlFactory.makeAngleSliderEditor( clientProperties, _angleSlider );
         _angleEditor.setPrefWidth( 70d );
@@ -116,7 +116,7 @@ public class AnglePane extends VBox {
             _angleEditor.setValue( editedValue );
 
             // Sync the slider and read-only label to the saved value in the
-            // editor.
+            // textField.
             setAngleDegrees( _angleEditor.getValue() );
         }
     }

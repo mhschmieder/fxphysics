@@ -41,7 +41,7 @@ public final class HumidityEditor extends DoubleEditor {
     // also add supporting methods for unit conversion and display?
     public static final double VALUE_INCREMENT_PERCENT = 10.0d;
 
-    public HumidityEditor( final ClientProperties clientProperties,
+    public HumidityEditor( final ClientProperties pClientProperties,
                            final String initialText,
                            final String tooltipText,
                            final double humidityMinimum,
@@ -50,7 +50,7 @@ public final class HumidityEditor extends DoubleEditor {
         // Always call the superclass constructor first!
         // NOTE: We use up to two decimal places of precision for displaying
         // humidity, and four decimal places for parsing humidity.
-        super( clientProperties,
+        super( pClientProperties,
                initialText,
                tooltipText,
                true,
@@ -63,5 +63,4 @@ public final class HumidityEditor extends DoubleEditor {
                humidityInitial,
                VALUE_INCREMENT_PERCENT );
     }
-
 }

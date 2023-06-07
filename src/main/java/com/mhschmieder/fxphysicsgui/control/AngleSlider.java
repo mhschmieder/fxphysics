@@ -34,6 +34,7 @@ import org.apache.commons.math3.util.FastMath;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.NumberSlider;
+import com.mhschmieder.mathtoolkit.MathUtilities;
 import com.mhschmieder.physicstoolkit.AngleUnit;
 
 import javafx.geometry.Orientation;
@@ -105,15 +106,8 @@ public final class AngleSlider extends NumberSlider {
         // Unwrap the angle based on period, using the established minimum and
         // maximum so that we don't accidentally clamp, but still clamp if the
         // allowed range itself is less than a full period.
-        double unwrappedAngleDegrees = unclampedValue;
-
-        while ( unwrappedAngleDegrees < getMin() ) {
-            unwrappedAngleDegrees += 360d;
-        }
-
-        while ( unwrappedAngleDegrees > getMax() ) {
-            unwrappedAngleDegrees -= 360d;
-        }
+        double unwrappedAngleDegrees = MathUtilities.unwrapAngleRangeDegrees(
+             unclampedValue, getMin(), getMax() );
 
         return unwrappedAngleDegrees;
     }

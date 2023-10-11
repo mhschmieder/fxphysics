@@ -37,6 +37,8 @@ import com.mhschmieder.physicstoolkit.WeightUnit;
 /**
  * The Weight Units selector supports all Weight Units that are currently
  * implemented in our core Physics Library.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class WeightUnitSelector extends TextSelector {
 
@@ -60,8 +62,9 @@ public final class WeightUnitSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
-               WEIGHT_UNITS,
-               weightUnit.toCanonicalString() );
+               WEIGHT_UNITS.length,
+               weightUnit.toCanonicalString(),
+               WEIGHT_UNITS );
     }
 
     public WeightUnit getWeightUnit() {

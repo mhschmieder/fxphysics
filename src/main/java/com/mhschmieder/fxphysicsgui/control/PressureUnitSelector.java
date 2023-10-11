@@ -37,6 +37,8 @@ import com.mhschmieder.physicstoolkit.PressureUnit;
 /**
  * The Pressure Units selector supports all Pressure Units that are currently
  * implemented in our core Physics Library.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class PressureUnitSelector extends TextSelector {
 
@@ -57,8 +59,9 @@ public final class PressureUnitSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
-               PRESSURE_UNITS,
-               pressureUnitDefault.toCanonicalString() );
+               PRESSURE_UNITS.length,
+               pressureUnitDefault.toCanonicalString(),
+               PRESSURE_UNITS );
     }
 
     public PressureUnit getPressureUnit() {

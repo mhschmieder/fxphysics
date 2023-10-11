@@ -37,6 +37,8 @@ import com.mhschmieder.physicstoolkit.AngleUnit;
 /**
  * The Angle Unit selector supports all Angle Units that are currently
  * implemented in our core Math Library.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class AngleUnitSelector extends TextSelector {
 
@@ -57,8 +59,9 @@ public final class AngleUnitSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
-               ANGLE_UNITS,
-               ANGLE_UNIT_DEFAULT );
+               ANGLE_UNITS.length,
+               ANGLE_UNIT_DEFAULT,
+               ANGLE_UNITS );
     }
 
     public AngleUnit getAngleUnit() {

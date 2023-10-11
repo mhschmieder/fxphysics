@@ -37,6 +37,8 @@ import com.mhschmieder.physicstoolkit.TemperatureUnit;
 /**
  * The Temperature Units selector supports all Temperature Units that are
  * currently implemented in our core Physics Library.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public final class TemperatureUnitSelector extends TextSelector {
 
@@ -57,8 +59,9 @@ public final class TemperatureUnitSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
-               TEMPERATURE_UNITS,
-               temperatureUnitDefault.toCanonicalString() );
+               TEMPERATURE_UNITS.length,
+               temperatureUnitDefault.toCanonicalString(),
+               TEMPERATURE_UNITS );
     }
 
     public TemperatureUnit getTemperatureUnit() {

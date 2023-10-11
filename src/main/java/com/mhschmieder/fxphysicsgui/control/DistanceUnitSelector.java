@@ -37,6 +37,8 @@ import com.mhschmieder.physicstoolkit.DistanceUnit;
 /**
  * The Distance Unit selector supports all Distance Units that are currently
  * implemented in our core Math Library.
+ * <p>
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
  */
 public class DistanceUnitSelector extends TextSelector {
 
@@ -82,8 +84,9 @@ public class DistanceUnitSelector extends TextSelector {
                applyToolkitCss,
                false,
                false,
-               includeChooseOne ? DISTANCE_UNITS_AMBIGUOUS : DISTANCE_UNITS_KNOWN,
-               includeChooseOne ? CHOOSE_ONE : distanceUnit.toCanonicalString() );
+               10,
+               includeChooseOne ? CHOOSE_ONE : distanceUnit.toCanonicalString(),
+               includeChooseOne ? DISTANCE_UNITS_AMBIGUOUS : DISTANCE_UNITS_KNOWN );
     }
 
     public final DistanceUnit getDistanceUnit() {

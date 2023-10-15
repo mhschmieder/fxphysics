@@ -211,7 +211,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
         } );
     }
 
-    public void syncViewToModel() {
+    public void updateView() {
         updateLabels();
     }
 

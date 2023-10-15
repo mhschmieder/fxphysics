@@ -171,7 +171,7 @@ public final class NaturalEnvironmentInformationTable extends DataViewXComponent
         _naturalEnvironment = naturalEnvironment;
     }
 
-    public void syncViewToModel() {
+    public void updateView() {
         updateLabels();
     }
 

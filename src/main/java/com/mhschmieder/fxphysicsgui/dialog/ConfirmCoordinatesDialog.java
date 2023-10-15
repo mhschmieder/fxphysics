@@ -117,12 +117,12 @@ public class ConfirmCoordinatesDialog extends XDialog {
     }
 
     @Override
-    public void syncModelToView() {
+    public void updateModel() {
         _coordinatesCandidate = _positionPane.getCartesianPosition2D();
     }
 
     @Override
-    public void syncViewToModel() {
+    public void updateView() {
         _positionPane.setCartesianPosition2D( _coordinatesCandidate );
     }
 

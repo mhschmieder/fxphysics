@@ -91,7 +91,7 @@ public class PhysicsDialogUtilities {
         case OK_DONE:
         case YES:
             // Sync the data model to the final edits before querying them.
-            confirmCoordinatesDialog.syncModelToView();
+            confirmCoordinatesDialog.updateModel();
 
             // Return the newly confirmed coordinates.
             coordinates = confirmCoordinatesDialog.getCoordinatesCandidate();

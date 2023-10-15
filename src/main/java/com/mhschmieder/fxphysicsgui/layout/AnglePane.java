@@ -115,8 +115,8 @@ public class AnglePane extends VBox {
         if ( editedValue != _angleEditor.getValue() ) {
             _angleEditor.setValue( editedValue );
 
-            // Sync the slider and read-only label to the saved value in the
-            // textField.
+            // Update the slider and read-only label to match the saved value
+            // in the TextField.
             setAngleDegrees( _angleEditor.getValue() );
         }
     }

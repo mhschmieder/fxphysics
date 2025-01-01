@@ -70,11 +70,11 @@ public final class MeasurementUnits {
     private final PressureUnit                      pressureUnitDefault;
 
     // NOTE: These fields have to follow JavaFX Property Beans conventions.
-    public BooleanBinding                           distanceUnitChanged;
-    public BooleanBinding                           angleUnitChanged;
-    public BooleanBinding                           weightUnitChanged;
-    public BooleanBinding                           temperatureUnitChanged;
-    public BooleanBinding                           pressureUnitChanged;
+    private BooleanBinding                          distanceUnitChanged;
+    private BooleanBinding                          angleUnitChanged;
+    private BooleanBinding                          weightUnitChanged;
+    private BooleanBinding                          temperatureUnitChanged;
+    private BooleanBinding                          pressureUnitChanged;
 
     /**
      * This is the default constructor; it sets all instance variables to
@@ -121,8 +121,8 @@ public final class MeasurementUnits {
 
         // Bind all of the properties to the associated dirty flag.
         // NOTE: This is done during initialization, as it is best to make
-        // singleton objects and just update their values vs. reconstructing.
-        bindProperties();
+        //  singleton objects and just update their values vs. reconstructing.
+        makeBooleanBindings();
     }
 
     /**
@@ -141,11 +141,7 @@ public final class MeasurementUnits {
               pMeasurementUnits.getPressureUnit() );
     }
 
-    public ObjectProperty< AngleUnit > angleUnitProperty() {
-        return angleUnit;
-    }
-
-    public void bindProperties() {
+    public void makeBooleanBindings() {
         // Establish the dirty flag criteria as specific assignable value
         // change.
         distanceUnitChanged = new BooleanBinding() {
@@ -232,10 +228,6 @@ public final class MeasurementUnits {
         throw new CloneNotSupportedException();
     }
 
-    public ObjectProperty< DistanceUnit > distanceUnitProperty() {
-        return distanceUnit;
-    }
-
     /*
      * (non-Javadoc)
      * @see java.lang.Object#equals(java.lang.Object)
@@ -295,26 +287,6 @@ public final class MeasurementUnits {
         return true;
     }
 
-    public AngleUnit getAngleUnit() {
-        return angleUnit.get();
-    }
-
-    public DistanceUnit getDistanceUnit() {
-        return distanceUnit.get();
-    }
-
-    public PressureUnit getPressureUnit() {
-        return pressureUnit.get();
-    }
-
-    public TemperatureUnit getTemperatureUnit() {
-        return temperatureUnit.get();
-    }
-
-    public WeightUnit getWeightUnit() {
-        return weightUnit.get();
-    }
-
     /*
      * (non-Javadoc)
      * @see java.lang.Object#hashCode()
@@ -332,10 +304,6 @@ public final class MeasurementUnits {
         return result;
     }
 
-    public ObjectProperty< PressureUnit > pressureUnitProperty() {
-        return pressureUnit;
-    }
-
     /**
      * Default pseudo-constructor.
      */
@@ -345,14 +313,6 @@ public final class MeasurementUnits {
                              weightUnitDefault,
                              temperatureUnitDefault,
                              pressureUnitDefault );
-    }
-
-    public void setAngleUnit( final AngleUnit pAngleUnit ) {
-        angleUnit.set( pAngleUnit );
-    }
-
-    public void setDistanceUnit( final DistanceUnit pDistanceUnit ) {
-        distanceUnit.set( pDistanceUnit );
     }
 
     /**
@@ -396,24 +356,103 @@ public final class MeasurementUnits {
                              pMeasurementUnits.getPressureUnit() );
     }
 
-    public void setPressureUnit( final PressureUnit pPressureUnit ) {
-        pressureUnit.set( pPressureUnit );
+    public ObjectProperty< DistanceUnit > distanceUnitProperty() {
+        return distanceUnit;
     }
 
-    public void setTemperatureUnit( final TemperatureUnit pTemperatureUnit ) {
-        temperatureUnit.set( pTemperatureUnit );
+    public DistanceUnit getDistanceUnit() {
+        return distanceUnit.get();
     }
 
-    public void setWeightUnit( final WeightUnit pWeightUnit ) {
-        weightUnit.set( pWeightUnit );
+    public void setDistanceUnit( final DistanceUnit pDistanceUnit ) {
+        distanceUnit.set( pDistanceUnit );
     }
 
-    public ObjectProperty< TemperatureUnit > temperatureUnitProperty() {
-        return temperatureUnit;
+    public ObjectProperty< AngleUnit > angleUnitProperty() {
+        return angleUnit;
+    }
+
+    public AngleUnit getAngleUnit() {
+        return angleUnit.get();
+    }
+
+    public void setAngleUnit( final AngleUnit pAngleUnit ) {
+        angleUnit.set( pAngleUnit );
     }
 
     public ObjectProperty< WeightUnit > weightUnitProperty() {
         return weightUnit;
     }
 
+    public WeightUnit getWeightUnit() {
+        return weightUnit.get();
+    }
+
+    public void setWeightUnit( final WeightUnit pWeightUnit ) {
+        weightUnit.set( pWeightUnit );
+    }
+
+    public TemperatureUnit getTemperatureUnit() {
+        return temperatureUnit.get();
+    }
+
+    public ObjectProperty< TemperatureUnit > temperatureUnitProperty() {
+        return temperatureUnit;
+    }
+
+    public void setTemperatureUnit( final TemperatureUnit pTemperatureUnit ) {
+        temperatureUnit.set( pTemperatureUnit );
+    }
+
+    public ObjectProperty< PressureUnit > pressureUnitProperty() {
+        return pressureUnit;
+    }
+
+    public PressureUnit getPressureUnit() {
+        return pressureUnit.get();
+    }
+
+    public void setPressureUnit( final PressureUnit pPressureUnit ) {
+        pressureUnit.set( pPressureUnit );
+    }
+
+    public BooleanBinding distanceUnitChangedProperty() {
+        return distanceUnitChanged;
+    }
+    
+    public boolean isDistanceUnitChanged() {
+        return distanceUnitChanged.get();
+    }
+    
+    public BooleanBinding angleUnitChangedProperty() {
+        return angleUnitChanged;
+    }
+    
+    public boolean isAngleUnitChanged() {
+        return angleUnitChanged.get();
+    }
+    
+    public BooleanBinding weightUnitChangedProperty() {
+        return weightUnitChanged;
+    }
+    
+    public boolean isWeightUnitChanged() {
+        return weightUnitChanged.get();
+    }
+    
+    public BooleanBinding temperatureUnitChangedProperty() {
+        return temperatureUnitChanged;
+    }
+    
+    public boolean isTemperatureUnitChanged() {
+        return temperatureUnitChanged.get();
+    }
+    
+    public BooleanBinding pressureUnitChangedProperty() {
+        return pressureUnitChanged;
+    }
+    
+    public boolean isPressureUnitChanged() {
+        return pressureUnitChanged.get();
+    }
 }

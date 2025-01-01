@@ -32,6 +32,7 @@ package com.mhschmieder.fxphysicsgui.model;
 
 import java.util.Objects;
 
+import com.mhschmieder.fxgraphicstoolkit.beans.BeanFactory;
 import com.mhschmieder.physicstoolkit.HumidityUnit;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.PressureUnit;
@@ -63,7 +64,7 @@ public final class NaturalEnvironment {
     private final BooleanProperty airAttenuationApplied;
 
     // NOTE: This field has to follow JavaFX Property Beans conventions.
-    public BooleanBinding         naturalEnvironmentChanged;
+    private BooleanBinding         naturalEnvironmentChanged;
 
     /**
      * This is the default constructor; it sets all instance variables to
@@ -100,8 +101,12 @@ public final class NaturalEnvironment {
 
         // Bind all of the properties to the associated dirty flag.
         // NOTE: This is done during initialization, as it is best to make
-        // singleton objects and just update their values vs. reconstructing.
-        bindProperties();
+        //  singleton objects and just update their values vs. reconstructing.
+        naturalEnvironmentChanged = BeanFactory.makeBooleanBinding(
+            temperatureKProperty(),
+            humidityRelativeProperty(),
+            pressurePaProperty(),
+            airAttenuationAppliedProperty() );
     }
 
     /**
@@ -119,34 +124,8 @@ public final class NaturalEnvironment {
               pNaturalEnvironment.isAirAttenuationApplied() );
     }
 
-    public BooleanProperty airAttenuationAppliedProperty() {
-        return airAttenuationApplied;
-    }
-
-    private void bindProperties() {
-        // Establish the dirty flag criteria as any assignable value change.
-        naturalEnvironmentChanged = new BooleanBinding() {
-            {
-                // When any of these assignable values change, the
-                // naturalEnvironmentChanged Boolean Binding is invalidated and
-                // notifies its listeners.
-                super.bind( temperatureKProperty(),
-                            humidityRelativeProperty(),
-                            pressurePaProperty(),
-                            airAttenuationAppliedProperty() );
-            }
-
-            // Just auto-clear the invalidation by overriding with a status that
-            // is affirmative of a change having triggered the call.
-            @Override
-            protected boolean computeValue() {
-                return true;
-            }
-        };
-    }
-
     // NOTE: Cloning is disabled as it is dangerous; use the copy constructor
-    // instead.
+    //  instead.
     @Override
     protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();
@@ -173,119 +152,12 @@ public final class NaturalEnvironment {
         return Objects.hash( temperatureK, humidityRelative, pressurePa, airAttenuationApplied );
     }
 
-    public double getHumidityRelative() {
-        return humidityRelative.get();
-    }
-
-    public double getPressure( final PressureUnit pPressureUnit ) {
-        double pressure = Double.NaN;
-        
-        switch ( pPressureUnit ) {
-        case KILOPASCALS:
-            pressure = getPressureKpa();
-            break;
-        case PASCALS:
-            pressure = getPressurePa();
-            break;
-        case MILLIBARS:
-            pressure = getPressureMb();
-            break;
-        case ATMOSPHERES:
-            pressure = getPressureAtm();
-            break;
-        default:
-            final String errMessage = "Unexpected PressureUnit " //$NON-NLS-1$
-                    + pPressureUnit;
-            throw new IllegalArgumentException( errMessage );
-        }
-        
-        return pressure;
-    }
-
-    public double getPressureAtm() {
-        return UnitConversion.pascalsToAtmospheres( pressurePa.get() );
-    }
-
-    public double getPressureKpa() {
-        return UnitConversion.pascalsToKilopascals( pressurePa.get() );
-    }
-
-    public double getPressureMb() {
-        return UnitConversion.pascalsToMillibars( pressurePa.get() );
-    }
-
-    public double getPressurePa() {
-        return pressurePa.get();
-    }
-
-    public double getTemperature( final TemperatureUnit pTemperatureUnit ) {
-        double temperature = Double.NaN;
-        
-        switch ( pTemperatureUnit ) {
-        case KELVIN:
-            temperature = getTemperatureK();
-            break;
-        case CELSIUS:
-            temperature = getTemperatureC();
-            break;
-        case FAHRENHEIT:
-            temperature = getTemperatureF();
-            break;
-        default:
-            final String errMessage = "Unexpected TemperatureUnit " //$NON-NLS-1$
-                    + pTemperatureUnit;
-            throw new IllegalArgumentException( errMessage );
-        }
-        
-        return temperature;
-    }
-
-    public double getTemperatureC() {
-        return UnitConversion.kelvinToCelsius( temperatureK.get() );
-    }
-
-    public double getTemperatureF() {
-        return UnitConversion.kelvinToFahrenheit( temperatureK.get() );
-    }
-
-    public double getTemperatureK() {
-        return temperatureK.get();
-    }
-
-    public DoubleProperty humidityRelativeProperty() {
-        return humidityRelative;
-    }
-
-    public boolean isAirAttenuationApplied() {
-        return airAttenuationApplied.get();
-    }
-
-    public DoubleProperty pressurePaProperty() {
-        return pressurePa;
-    }
-
     // Default pseudo-constructor.
     public void reset() {
         setNaturalEnvironment( TEMPERATURE_K_DEFAULT,
                                HUMIDITY_RELATIVE_DEFAULT,
                                PRESSURE_PA_DEFAULT,
                                AIR_ATTENUATION_APPLIED_DEFAULT );
-    }
-
-    public void setAirAttenuationApplied( final boolean pAirAttenuationApplied ) {
-        airAttenuationApplied.set( pAirAttenuationApplied );
-    }
-
-    public void setHumidityRelative( final double pHumidityRelative ) {
-        humidityRelative.set( pHumidityRelative );
-    }
-
-    public void setHumidityRelative( final double pHumidity, final HumidityUnit pHumidityUnit ) {
-        // TODO: Implement molar humidity, which requires adding a conversion
-        // method to UnitsConversion based on the C++ Physics Library code.
-        if ( HumidityUnit.RELATIVE.equals( pHumidityUnit ) ) {
-            setHumidityRelative( pHumidity );
-        }
     }
 
     /**
@@ -324,41 +196,42 @@ public final class NaturalEnvironment {
                                pNaturalEnvironment.isAirAttenuationApplied() );
     }
 
-    public void setPressure( final double pPressure, final PressureUnit pPressureUnit ) {
-        switch ( pPressureUnit ) {
-        case KILOPASCALS:
-            setPressureKpa( pPressure );
+    public DoubleProperty temperatureKProperty() {
+        return temperatureK;
+    }
+
+    public double getTemperature( final TemperatureUnit pTemperatureUnit ) {
+        double temperature = Double.NaN;
+        
+        switch ( pTemperatureUnit ) {
+        case KELVIN:
+            temperature = getTemperatureK();
             break;
-        case PASCALS:
-            setPressurePa( pPressure );
+        case CELSIUS:
+            temperature = getTemperatureC();
             break;
-        case MILLIBARS:
-            setPressureMb( pPressure );
-            break;
-        case ATMOSPHERES:
-            setPressureAtm( pPressure );
+        case FAHRENHEIT:
+            temperature = getTemperatureF();
             break;
         default:
-            final String errMessage = "Unexpected PressureUnit " //$NON-NLS-1$
-                    + pPressureUnit;
-            System.err.println( errMessage );
+            final String errMessage = "Unexpected TemperatureUnit " //$NON-NLS-1$
+                    + pTemperatureUnit;
+            throw new IllegalArgumentException( errMessage );
         }
+        
+        return temperature;
     }
 
-    public void setPressureAtm( final double pPressureAtm ) {
-        pressurePa.set( UnitConversion.atmospheresToPascals( pPressureAtm ) );
+    public double getTemperatureK() {
+        return temperatureK.get();
     }
 
-    public void setPressureKpa( final double pPressureKpa ) {
-        pressurePa.set( UnitConversion.kilopascalsToPascals( pPressureKpa ) );
+    public double getTemperatureC() {
+        return UnitConversion.kelvinToCelsius( temperatureK.get() );
     }
 
-    public void setPressureMb( final double pPressureMb ) {
-        pressurePa.set( UnitConversion.millibarsToPascals( pPressureMb ) );
-    }
-
-    public void setPressurePa( final double pPressurePa ) {
-        pressurePa.set( pPressurePa );
+    public double getTemperatureF() {
+        return UnitConversion.kelvinToFahrenheit( temperatureK.get() );
     }
 
     public void setTemperature( final double pTemperature,
@@ -380,6 +253,10 @@ public final class NaturalEnvironment {
         }
     }
 
+    public void setTemperatureK( final double pTemperatureK ) {
+        temperatureK.set( pTemperatureK );
+    }
+
     public void setTemperatureC( final double pTemperatureC ) {
         temperatureK.set( UnitConversion.celsiusToKelvin( pTemperatureC ) );
     }
@@ -387,13 +264,127 @@ public final class NaturalEnvironment {
     public void setTemperatureF( final double pTemperatureF ) {
         temperatureK.set( UnitConversion.fahrenheitToKelvin( pTemperatureF ) );
     }
-
-    public void setTemperatureK( final double pTemperatureK ) {
-        temperatureK.set( pTemperatureK );
+    
+    public DoubleProperty humidityRelativeProperty() {
+        return humidityRelative;
     }
 
-    public DoubleProperty temperatureKProperty() {
-        return temperatureK;
+    public double getHumidityRelative() {
+        return humidityRelative.get();
     }
 
+    public void setHumidityRelative( final double pHumidity, 
+                                     final HumidityUnit pHumidityUnit ) {
+        // TODO: Implement molar humidity, which requires adding a conversion
+        // method to UnitsConversion based on the C++ Physics Library code.
+        if ( HumidityUnit.RELATIVE.equals( pHumidityUnit ) ) {
+            setHumidityRelative( pHumidity );
+        }
+    }
+
+    public void setHumidityRelative( final double pHumidityRelative ) {
+        humidityRelative.set( pHumidityRelative );
+    }
+
+    public DoubleProperty pressurePaProperty() {
+        return pressurePa;
+    }
+
+    public double getPressure( final PressureUnit pPressureUnit ) {
+        double pressure = Double.NaN;
+        
+        switch ( pPressureUnit ) {
+        case KILOPASCALS:
+            pressure = getPressureKpa();
+            break;
+        case PASCALS:
+            pressure = getPressurePa();
+            break;
+        case MILLIBARS:
+            pressure = getPressureMb();
+            break;
+        case ATMOSPHERES:
+            pressure = getPressureAtm();
+            break;
+        default:
+            final String errMessage = "Unexpected PressureUnit " //$NON-NLS-1$
+                    + pPressureUnit;
+            throw new IllegalArgumentException( errMessage );
+        }
+        
+        return pressure;
+    }
+
+    public double getPressureKpa() {
+        return UnitConversion.pascalsToKilopascals( pressurePa.get() );
+    }
+
+    public double getPressurePa() {
+        return pressurePa.get();
+    }
+
+    public double getPressureMb() {
+        return UnitConversion.pascalsToMillibars( pressurePa.get() );
+    }
+
+    public double getPressureAtm() {
+        return UnitConversion.pascalsToAtmospheres( pressurePa.get() );
+    }
+
+    public void setPressure( final double pPressure, final PressureUnit pPressureUnit ) {
+        switch ( pPressureUnit ) {
+        case KILOPASCALS:
+            setPressureKpa( pPressure );
+            break;
+        case PASCALS:
+            setPressurePa( pPressure );
+            break;
+        case MILLIBARS:
+            setPressureMb( pPressure );
+            break;
+        case ATMOSPHERES:
+            setPressureAtm( pPressure );
+            break;
+        default:
+            final String errMessage = "Unexpected PressureUnit " //$NON-NLS-1$
+                    + pPressureUnit;
+            System.err.println( errMessage );
+        }
+    }
+
+    public void setPressureKpa( final double pPressureKpa ) {
+        pressurePa.set( UnitConversion.kilopascalsToPascals( pPressureKpa ) );
+    }
+
+    public void setPressurePa( final double pPressurePa ) {
+        pressurePa.set( pPressurePa );
+    }
+
+    public void setPressureMb( final double pPressureMb ) {
+        pressurePa.set( UnitConversion.millibarsToPascals( pPressureMb ) );
+    }
+
+    public void setPressureAtm( final double pPressureAtm ) {
+        pressurePa.set( UnitConversion.atmospheresToPascals( pPressureAtm ) );
+    }
+
+    public BooleanProperty airAttenuationAppliedProperty() {
+        return airAttenuationApplied;
+    }
+
+    public boolean isAirAttenuationApplied() {
+        return airAttenuationApplied.get();
+    }
+
+    public void setAirAttenuationApplied( final boolean pAirAttenuationApplied ) {
+        airAttenuationApplied.set( pAirAttenuationApplied );
+    }
+
+    public BooleanBinding naturalEnvironmentChangedProperty() {
+        return naturalEnvironmentChanged;
+    }
+    
+    public boolean isNaturalEnvironmentChanged() {
+        return naturalEnvironmentChanged.get();
+    }
 }

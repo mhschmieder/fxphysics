@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,8 +38,14 @@ import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
+import com.mhschmieder.pdftoolkit.PdfFonts;
+import com.mhschmieder.pdftoolkit.PdfTools;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.pdfjet.Align;
+import com.pdfjet.PDF;
+import com.pdfjet.Page;
+import com.pdfjet.Point;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -249,4 +255,27 @@ public final class NaturalEnvironmentInformationPane extends VBox {
         updateLabels();
     }
 
+    public Point exportToPdf( final PDF document,
+                              final Page page,
+                              final Point initialPoint,
+                              final PdfFonts borderlessTableFonts )
+            throws Exception {
+        // Collect the information fields to render to a single-column table.
+        final String[] information = new String[ 4 ];
+        int i = 0;
+        information[ i++ ] = _airAttenuationLabel.getText();
+        information[ i++ ] = _temperatureLabel.getText();
+        information[ i++ ] = _pressureLabel.getText();
+        information[ i++ ] = _relativeHumidityLabel.getText();
+
+        // Write the Natural Environment Information Table, left-aligned.
+        final Point point = PdfTools.writeInformationTable( document,
+                                                            page,
+                                                            initialPoint,
+                                                            borderlessTableFonts,
+                                                            Align.LEFT,
+                                                            information );
+
+        return point;
+    }
 }

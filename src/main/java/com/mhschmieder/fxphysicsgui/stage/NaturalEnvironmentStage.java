@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -180,15 +180,21 @@ public final class NaturalEnvironmentStage extends XStage {
     public void doExportImageGraphics() {
         // Switch on export context, so we know which type of data and format to
         // save.
-        final String imageCategory = "Natural Environment"; //$NON-NLS-1$
-        fileExportImageGraphics( imageCategory );
+        final String graphicsCategory = "Natural Environment";
+        fileExportRasterGraphics( this, 
+                                  _defaultDirectory, 
+                                  clientProperties, 
+                                  graphicsCategory );
     }
 
     public void doExportVectorGraphics() {
         // Switch on export context, so we know which type of data and format to
         // save.
-        final String graphicsCategory = "Natural Environment"; //$NON-NLS-1$
-        fileExportVectorGraphics( graphicsCategory );
+        final String graphicsCategory = "Natural Environment";
+        fileExportVectorGraphics( this, 
+                                  _defaultDirectory, 
+                                  clientProperties, 
+                                  graphicsCategory );
     }
 
     protected void doReset() {

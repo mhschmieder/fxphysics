@@ -118,7 +118,7 @@ public final class NaturalEnvironmentStage extends XStage {
         _actions._fileActions._printAction.setEventHandler( evt -> doPrint() );
 
         // Load the action handlers for the "Export" actions.
-        _actions._fileActions._exportActions._exportImageGraphicsAction
+        _actions._fileActions._exportActions._exportRasterGraphicsAction
                 .setEventHandler( evt -> doExportImageGraphics() );
         _actions._fileActions._exportActions._exportVectorGraphicsAction
                 .setEventHandler( evt -> doExportVectorGraphics() );
@@ -177,26 +177,6 @@ public final class NaturalEnvironmentStage extends XStage {
                 .bindBidirectional( _naturalEnvironment.airAttenuationAppliedProperty() );
     }
 
-    public void doExportImageGraphics() {
-        // Switch on export context, so we know which type of data and format to
-        // save.
-        final String graphicsCategory = "Natural Environment";
-        fileExportRasterGraphics( this, 
-                                  _defaultDirectory, 
-                                  clientProperties, 
-                                  graphicsCategory );
-    }
-
-    public void doExportVectorGraphics() {
-        // Switch on export context, so we know which type of data and format to
-        // save.
-        final String graphicsCategory = "Natural Environment";
-        fileExportVectorGraphics( this, 
-                                  _defaultDirectory, 
-                                  clientProperties, 
-                                  graphicsCategory );
-    }
-
     protected void doReset() {
         reset();
     }
@@ -216,6 +196,8 @@ public final class NaturalEnvironmentStage extends XStage {
                    NATURAL_ENVIRONMENT_STAGE_WIDTH_DEFAULT,
                    NATURAL_ENVIRONMENT_STAGE_HEIGHT_DEFAULT,
                    resizable );
+        
+        graphicsCategory = "Natural Environment";
     }
 
     // Load the relevant actions for this Stage.

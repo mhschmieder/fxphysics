@@ -210,12 +210,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
         // Load the invalidation listener for the "Natural Environment Changed"
         // binding.
         _naturalEnvironment.naturalEnvironmentChangedProperty().addListener( 
-            invalidationListener -> {
-                // Clear the invalidation and process the change.
-                if ( _naturalEnvironment.isNaturalEnvironmentChanged() ) {
-                    updateLabels();
-                }
-            } );
+            invalidationListener -> updateLabels() );
     }
 
     public void updateView() {

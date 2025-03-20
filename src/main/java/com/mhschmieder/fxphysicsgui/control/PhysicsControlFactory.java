@@ -59,14 +59,31 @@ public class PhysicsControlFactory {
                                                      final double minimumValue,
                                                      final double maximumValue,
                                                      final double initialValue ) {
-        final AngleEditor angleEditor = makeAngleEditor( clientProperties,
-                                                         tooltipText,
-                                                         AngleUnit.DEGREES.toPresentationString(),
-                                                         minimumValue,
-                                                         maximumValue,
-                                                         initialValue );
+        return makeAngleEditor( clientProperties,
+                                tooltipText,
+                                AngleUnit.DEGREES.toPresentationString(),
+                                minimumValue,
+                                maximumValue,
+                                initialValue );
+    }
 
-        return angleEditor;
+    // Helper method to get an Angle Editor, standalone or paired.
+    public static final AngleEditor makeAngleEditor( final ClientProperties clientProperties,
+                                                     final String tooltipText,
+                                                     final String measurementUnit,
+                                                     final double minimumValue,
+                                                     final double maximumValue,
+                                                     final double initialValue ) {
+        return makeAngleEditor( clientProperties,
+                                tooltipText,
+                                0,
+                                2,
+                                0,
+                                10,
+                                measurementUnit,
+                                minimumValue,
+                                maximumValue,
+                                initialValue );
     }
 
     // Helper method to get an Angle Editor, standalone or paired.
@@ -81,7 +98,7 @@ public class PhysicsControlFactory {
                                                      final double maximumValue,
                                                      final double initialValue ) {
         // Get the current value and format it as initial text.
-        final String initialText = Double.toString( initialValue );
+        final String initialText = Double.toString( initialValue ) + measurementUnit;
 
         final AngleEditor angleEditor = new AngleEditor( clientProperties,
                                                          initialText,
@@ -102,20 +119,31 @@ public class PhysicsControlFactory {
     // Helper method to get an Angle Editor, standalone or paired.
     public static final AngleEditor makeAngleEditor( final ClientProperties clientProperties,
                                                      final String tooltipText,
+                                                     final int minFractionDigitsFormat,
+                                                     final int maxFractionDigitsFormat,
+                                                     final int minFractionDigitsParse,
+                                                     final int maxFractionDigitsParse,
                                                      final String measurementUnit,
                                                      final double minimumValue,
                                                      final double maximumValue,
-                                                     final double initialValue ) {
-        final AngleEditor angleEditor = makeAngleEditor( clientProperties,
+                                                     final double initialValue,
+                                                     final double valueIncrement ) {
+        // Get the current value and format it as initial text.
+        final String initialText = Double.toString( initialValue ) + measurementUnit;
+
+        final AngleEditor angleEditor = new AngleEditor( clientProperties,
+                                                         initialText,
                                                          tooltipText,
-                                                         0,
-                                                         2,
-                                                         0,
-                                                         10,
-                                                         measurementUnit,
+                                                         minFractionDigitsFormat,
+                                                         maxFractionDigitsFormat,
+                                                         minFractionDigitsParse,
+                                                         maxFractionDigitsParse,
                                                          minimumValue,
                                                          maximumValue,
-                                                         initialValue );
+                                                         initialValue,
+                                                         valueIncrement );
+
+        angleEditor.setMeasurementUnitString( measurementUnit );
 
         return angleEditor;
     }

@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ public class AngleEditor extends DoubleEditor {
     // NOTE: We increment by 0.1 degrees as this is a common default.
     public static final double VALUE_INCREMENT_DEGREES = 0.1d;
 
-    public AngleEditor( final ClientProperties clientProperties,
+    public AngleEditor( final ClientProperties pClientProperties,
                         final String initialText,
                         final String tooltipText,
                         final int minFractionDigitsFormat,
@@ -52,8 +52,32 @@ public class AngleEditor extends DoubleEditor {
                         final double minimumValue,
                         final double maximumValue,
                         final double initialValue ) {
+        this( pClientProperties,
+               initialText,
+               tooltipText,
+               minFractionDigitsFormat,
+               maxFractionDigitsFormat,
+               minFractionDigitsParse,
+               maxFractionDigitsParse,
+               minimumValue,
+               maximumValue,
+               initialValue,
+               VALUE_INCREMENT_DEGREES );
+    }
+
+    public AngleEditor( final ClientProperties pClientProperties,
+                        final String initialText,
+                        final String tooltipText,
+                        final int minFractionDigitsFormat,
+                        final int maxFractionDigitsFormat,
+                        final int minFractionDigitsParse,
+                        final int maxFractionDigitsParse,
+                        final double minimumValue,
+                        final double maximumValue,
+                        final double initialValue,
+                        final double valueIncrement ) {
         // Always call the superclass constructor first!
-        super( clientProperties,
+        super( pClientProperties,
                initialText,
                tooltipText,
                true,
@@ -64,7 +88,7 @@ public class AngleEditor extends DoubleEditor {
                minimumValue,
                maximumValue,
                initialValue,
-               VALUE_INCREMENT_DEGREES );
+               valueIncrement );
     }
 
     @Override
@@ -87,5 +111,4 @@ public class AngleEditor extends DoubleEditor {
         
         return unwrappedAngleDegrees;
     }
-
 }

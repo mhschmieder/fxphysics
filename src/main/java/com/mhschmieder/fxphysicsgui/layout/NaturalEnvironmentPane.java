@@ -33,7 +33,7 @@ package com.mhschmieder.fxphysicsgui.layout;
 import org.apache.commons.math3.util.FastMath;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.fxguitoolkit.ScrollingSensitivity;
+import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.physicstoolkit.Altitude;

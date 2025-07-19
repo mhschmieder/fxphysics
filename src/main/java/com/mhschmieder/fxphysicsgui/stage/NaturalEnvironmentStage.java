@@ -30,14 +30,9 @@
  */
 package com.mhschmieder.fxphysicsgui.stage;
 
-import java.io.File;
-import java.util.prefs.Preferences;
-
 import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.io.FileUtilities;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
-import com.mhschmieder.fxguitoolkit.action.BackgroundColorChoices;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
 import com.mhschmieder.fxphysicsgui.action.NaturalEnvironmentActions;
 import com.mhschmieder.fxphysicsgui.control.NaturalEnvironmentToolBar;
@@ -225,29 +220,6 @@ public final class NaturalEnvironmentStage extends XStage {
         return menuBar;
     }
 
-    // Load all of the User Preferences for this Stage.
-    // TODO: Make a class with get/set methods for user preferences, a la
-    // Listing 3.3 on p. 37 of "More Java Pitfalls" (Wiley), and including
-    // static default values for better modularity.
-    @SuppressWarnings("nls")
-    @Override
-    public void loadPreferences() {
-        // Get the user node for this package/class, so that we get the
-        // preferences specific to this frame and user.
-        final Preferences prefs = Preferences.userNodeForPackage( getClass() );
-
-        // Create and set the visualization parameters.
-        final String backgroundColor = prefs
-                .get( "backgroundColor", BackgroundColorChoices.DEFAULT_BACKGROUND_COLOR_NAME );
-
-        // Load the Default Directory from User Preferences.
-        final File defaultDirectory = FileUtilities.loadDefaultDirectoryPreferences( prefs );
-
-        // Forward the preferences data from the stored preferences to the
-        // common preferences handler.
-        updatePreferences( backgroundColor, defaultDirectory );
-    }
-
     // Add the Tool Bar for this Stage.
     @Override
     public ToolBar loadToolBar() {
@@ -260,8 +232,8 @@ public final class NaturalEnvironmentStage extends XStage {
 
     // Reset all fields to the default values, regardless of state.
     // NOTE: This is done from the view vs. the model, as there may be more
-    // than one component per property (e.g. the radio buttons for altitude, as
-    // part of atmospheric pressure as an alternate specification of pressure).
+    //  than one component per property (e.g. the radio buttons for altitude, as
+    //  part of atmospheric pressure as an alternate specification of pressure).
     @Override
     protected void reset() {
         _toolBar._useAirAttenuationCheckBox.setSelected( _initialUseAirAttenuation );
@@ -269,22 +241,15 @@ public final class NaturalEnvironmentStage extends XStage {
         // Forward this method to the Natural Environment Pane.
         _naturalEnvironmentPane.reset();
     }
-
-    // Save all of the non-login User Preferences for this Stage.
-    // TODO: Make a class with get/set methods for user preferences, a la
-    // Listing 3.3 on p. 37 of "More Java Pitfalls" (Wiley).
-    @SuppressWarnings("nls")
+    
     @Override
-    public void savePreferences() {
-        // Get the user node for this package/class, so that we get the
-        // preferences specific to this frame and user.
-        final Preferences prefs = Preferences.userNodeForPackage( getClass() );
+    public String getBackgroundColor() {
+        return _actions.getSelectedBackgroundColorName();
+    }
 
-        final String backgroundColor = _actions.getSelectedBackgroundColorName();
-        prefs.put( "backgroundColor", backgroundColor );
-
-        // Save the Default Directory to User Preferences.
-        FileUtilities.saveDefaultDirectoryPreferences( _defaultDirectory, prefs );
+    @Override
+    public void selectBackgroundColor( final String backgroundColorName ) {
+        _actions.selectBackgroundColor( backgroundColorName );
     }
 
     @Override
@@ -321,7 +286,8 @@ public final class NaturalEnvironmentStage extends XStage {
      * @param scrollingSensitivity
      *            The sensitivity of the mouse scroll wheel
      */
-    public void setScrollingSensitivity( final ScrollingSensitivity scrollingSensitivity ) {
+    public void setScrollingSensitivity( 
+            final ScrollingSensitivity scrollingSensitivity ) {
         // Forward this reference to the Natural Environment Pane.
         _naturalEnvironmentPane.setScrollingSensitivity( scrollingSensitivity );
     }
@@ -337,19 +303,6 @@ public final class NaturalEnvironmentStage extends XStage {
     public void updateDistanceUnit( final DistanceUnit distanceUnit ) {
         // Forward this method to the Natural Environment Pane.
         _naturalEnvironmentPane.updateDistanceUnit( distanceUnit );
-    }
-
-    // Update all of the User Preferences for this Stage.
-    // TODO: Make a preferences object instead, with get/set methods, which can
-    // be set from HTML, XML, or stored user preferences?
-    private void updatePreferences( final String backgroundColorName,
-                                    final File defaultDirectory ) {
-        // Set the background color for most layout content.
-        final Color backgroundColor = _actions.selectBackgroundColor( backgroundColorName );
-        setForegroundFromBackground( backgroundColor );
-
-        // Reset the default directory for local file operations.
-        setDefaultDirectory( defaultDirectory );
     }
 
     /**

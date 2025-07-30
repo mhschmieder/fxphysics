@@ -108,27 +108,27 @@ public final class NaturalEnvironmentStage extends XStage {
     @Override
     protected void addActionHandlers() {
         // Load the action handlers for the "File" actions.
-        _actions._fileActions._closeWindowAction.setEventHandler( evt -> doCloseWindow() );
-        _actions._fileActions._pageSetupAction.setEventHandler( evt -> doPageSetup() );
-        _actions._fileActions._printAction.setEventHandler( evt -> doPrint() );
+        _actions.fileActions._closeWindowAction.setEventHandler( evt -> doCloseWindow() );
+        _actions.fileActions._pageSetupAction.setEventHandler( evt -> doPageSetup() );
+        _actions.fileActions._printAction.setEventHandler( evt -> doPrint() );
 
         // Load the action handlers for the "Export" actions.
-        _actions._fileActions._exportActions._exportRasterGraphicsAction
+        _actions.fileActions._exportActions._exportRasterGraphicsAction
                 .setEventHandler( evt -> doExportImageGraphics() );
-        _actions._fileActions._exportActions._exportVectorGraphicsAction
+        _actions.fileActions._exportActions._exportVectorGraphicsAction
                 .setEventHandler( evt -> doExportVectorGraphics() );
 
         // Load the action handlers for the "Background Color" choices.
-        addBackgroundColorChoiceHandlers( _actions._settingsActions._backgroundColorChoices );
+        addBackgroundColorChoiceHandlers( _actions.settingsActions._backgroundColorChoices );
 
         // Load the action handlers for the "Window Size" actions.
-        addWindowSizeActionHandlers( _actions._settingsActions._windowSizeActions );
+        addWindowSizeActionHandlers( _actions.settingsActions._windowSizeActions );
 
         // Load the action handlers for the "Tools" actions.
         // NOTE: These are registered at the top-most level of the application.
 
         // Load the action handler for the "Reset" action.
-        _actions._resetAction.setEventHandler( evt -> doReset() );
+        _actions.resetAction.setEventHandler( evt -> doReset() );
     }
 
     // Add the Tool Bar's event listeners.

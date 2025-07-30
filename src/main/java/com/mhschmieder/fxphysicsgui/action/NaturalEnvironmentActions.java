@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.action.FileActions;
 import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
 import com.mhschmieder.fxguitoolkit.action.SettingsActions;
-import com.mhschmieder.fxguitoolkit.action.ToolsActions;
+import com.mhschmieder.fxguitoolkit.action.SimulationActions;
 import com.mhschmieder.fxguitoolkit.action.XAction;
 import com.mhschmieder.fxguitoolkit.action.XActionGroup;
 
@@ -50,97 +50,108 @@ import javafx.scene.paint.Color;
  */
 public final class NaturalEnvironmentActions {
 
-    public FileActions     _fileActions;
-    public SettingsActions _settingsActions;
-    public ToolsActions    _toolsActions;
+    public FileActions fileActions;
+    public SettingsActions settingsActions;
+    public SimulationActions simulationActions;
 
-    public XAction         _useAirAttenuationAction;
-    public XAction         _resetAction;
+    public XAction useAirAttenuationAction;
+    public XAction resetAction;
     
-    protected final boolean _vectorGraphicsSupported;
+    protected final boolean vectorGraphicsSupported;
 
     public NaturalEnvironmentActions( final ClientProperties pClientProperties,
-                                      final boolean vectorGraphicsSupported ) {
-        _vectorGraphicsSupported = vectorGraphicsSupported;
+                                      final boolean pVectorGraphicsSupported ) {
+        vectorGraphicsSupported = pVectorGraphicsSupported;
         
-        _fileActions = new FileActions( pClientProperties );
-        _settingsActions = new SettingsActions( pClientProperties );
-        _toolsActions = new ToolsActions( pClientProperties );
+        fileActions = new FileActions( pClientProperties );
+        settingsActions = new SettingsActions( pClientProperties );
+        simulationActions = new SimulationActions( pClientProperties );
 
-        _useAirAttenuationAction = PhysicsLabeledActionFactory
+        useAirAttenuationAction = PhysicsLabeledActionFactory
                 .getUseAirAttenuationAction( pClientProperties );
 
-        _resetAction = LabeledActionFactory.getResetAction( pClientProperties );
+        resetAction = LabeledActionFactory.getResetAction( pClientProperties );
 
         // The tool tip for "Reset" is unique per context so isn't in the
         // locale-sensitive resources for the generic action lookup.
-        _resetAction.setLongText( "Reset Natural Environment to Default Values" ); //$NON-NLS-1$
+        resetAction.setLongText( "Reset Natural Environment to Default Values" );
     }
 
     public Collection< Action > getBackgroundColorChoiceCollection() {
         // Forward this method to the Settings actions container.
-        return _settingsActions.getBackgroundColorChoiceCollection();
+        return settingsActions.getBackgroundColorChoiceCollection();
     }
 
     public Collection< Action > getExportActionCollection() {
         // Forward this method to the File actions container.
-        return _fileActions.getExportActionCollection( true, false );
+        return fileActions.getExportActionCollection( true, false );
     }
 
-    public Collection< Action > getFileActionCollection( final ClientProperties pClientProperties ) {
+    public Collection< Action > getFileActionCollection( 
+            final ClientProperties pClientProperties ) {
         // Forward this method to the File actions container.
         // TODO: Enable standard Vector Graphics Export for XT.
-        return _fileActions
-                .getFileActionCollection( pClientProperties, _vectorGraphicsSupported, false );
+        return fileActions
+                .getFileActionCollection( pClientProperties, 
+                                          vectorGraphicsSupported, 
+                                          false );
     }
 
-    public Collection< Action > getNaturalEnvironmentMenuBarActionCollection( final ClientProperties pClientProperties ) {
+    public Collection< Action > getNaturalEnvironmentMenuBarActionCollection( 
+            final ClientProperties pClientProperties ) {
         // TODO: Enable standard Vector Graphics Export for XT.
         final XActionGroup fileActionGroup = LabeledActionFactory
-                .getFileActionGroup( pClientProperties, _fileActions, _vectorGraphicsSupported, false );
+                .getFileActionGroup( pClientProperties, 
+                                     fileActions, 
+                                     vectorGraphicsSupported, 
+                                     false );
 
         final XActionGroup settingsActionGroup = LabeledActionFactory
-                .getSettingsActionGroup( pClientProperties, _settingsActions, true );
+                .getSettingsActionGroup( pClientProperties, settingsActions, true );
 
-        final XActionGroup toolsActionGroup = LabeledActionFactory
-                .getToolsActionGroup( pClientProperties, _toolsActions );
+        final XActionGroup simulationActionGroup = LabeledActionFactory
+                .getSimulationActionGroup( pClientProperties, simulationActions );
 
         final Collection< Action > naturalEnvironmentMenuBarActionCollection = Arrays
-                .asList( fileActionGroup, settingsActionGroup, toolsActionGroup );
+                .asList( fileActionGroup, 
+                         settingsActionGroup, 
+                         simulationActionGroup );
 
         return naturalEnvironmentMenuBarActionCollection;
     }
 
     public String getSelectedBackgroundColorName() {
         // Forward this method to the Settings actions container.
-        return _settingsActions.getSelectedBackgroundColorName();
+        return settingsActions.getSelectedBackgroundColorName();
     }
 
-    public Collection< Action > getSettingsActionCollection( final ClientProperties pClientProperties ) {
+    public Collection< Action > getSettingsActionCollection( 
+            final ClientProperties pClientProperties ) {
         // Forward this method to the File actions container.
-        return _settingsActions.getSettingsActionCollection( pClientProperties, true );
+        return settingsActions.getSettingsActionCollection( pClientProperties, true );
     }
 
-    public Collection< Action > getToolsActionCollection( final ClientProperties pClientProperties ) {
-        // Forward this method to the Tools actions container.
-        return _toolsActions.getToolsActionCollection( pClientProperties );
+    public Collection< Action > getSimulationActionCollection( 
+            final ClientProperties pClientProperties ) {
+        // Forward this method to the Simulation actions container.
+        return simulationActions.getSimulationActionCollection( pClientProperties );
     }
 
     public Collection< Action > getWindowSizeActionCollection() {
         // Forward this method to the Settings actions container.
-        return _settingsActions.getWindowSizeActionCollection( true );
+        return settingsActions.getWindowSizeActionCollection( true );
     }
 
     public boolean isUseAirAttenuation() {
-        return _useAirAttenuationAction.isSelected();
+        return useAirAttenuationAction.isSelected();
     }
 
     public Color selectBackgroundColor( final String backgroundColorName ) {
         // Forward this method to the Settings actions container.
-        return _settingsActions.selectBackgroundColor( backgroundColorName );
+        return settingsActions.selectBackgroundColor( backgroundColorName );
     }
 
     public void setUseAirAttenuation( final boolean useAirAttenuation ) {
-        _useAirAttenuationAction.setSelected( useAirAttenuation );
+        useAirAttenuationAction.setSelected( useAirAttenuation );
     }
 }

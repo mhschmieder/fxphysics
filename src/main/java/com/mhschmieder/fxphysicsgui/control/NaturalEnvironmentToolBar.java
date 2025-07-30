@@ -69,12 +69,12 @@ public final class NaturalEnvironmentToolBar extends ToolBar {
                               final NaturalEnvironmentActions naturalEnvironmentActions ) {
         // Make the Nodes for the Tool Bar.
         _predictButtons = new PredictButtons( pClientProperties,
-                                              naturalEnvironmentActions._toolsActions );
+                                              naturalEnvironmentActions.simulationActions );
         _useAirAttenuationCheckBox = PhysicsLabeledControlFactory
                 .getUseAirAttenuationCheckBox( pClientProperties,
-                                               naturalEnvironmentActions._useAirAttenuationAction );
+                                               naturalEnvironmentActions.useAirAttenuationAction );
         _resetButton = LabeledControlFactory
-                .getResetButton( pClientProperties, naturalEnvironmentActions._resetAction );
+                .getResetButton( pClientProperties, naturalEnvironmentActions.resetAction );
 
         // Add some spacers to separate logical groupings.
         // NOTE: We also force the Reset button to right-justify, and to stay
@@ -86,8 +86,8 @@ public final class NaturalEnvironmentToolBar extends ToolBar {
         HBox.setHgrow( spacer1, Priority.ALWAYS );
 
         // Add all the Nodes to the Tool Bar.
-        getItems().addAll( _predictButtons._predictButton,
-                           _predictButtons._clearButton,
+        getItems().addAll( _predictButtons.predictButton,
+                           _predictButtons.clearButton,
                            spacer1,
                            _useAirAttenuationCheckBox,
                            spacer2,

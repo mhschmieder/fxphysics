@@ -61,7 +61,7 @@ public class PhysicsControlFactory {
                                                      final double initialValue ) {
         return makeAngleEditor( clientProperties,
                                 tooltipText,
-                                AngleUnit.DEGREES.toPresentationString(),
+                                AngleUnit.DEGREES.abbreviation(),
                                 minimumValue,
                                 maximumValue,
                                 initialValue );

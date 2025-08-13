@@ -43,13 +43,13 @@ import com.mhschmieder.physicstoolkit.AngleUnit;
 public final class AngleUnitSelector extends TextSelector {
 
     // Default Angle Unit, for best "out of box" experience.
-    public static final String    ANGLE_UNIT_DEFAULT = AngleUnit.defaultValue().toCanonicalString();
+    public static final String    ANGLE_UNIT_DEFAULT = AngleUnit.defaultValue().label();
 
     private static final String[] ANGLE_UNITS        =
                                               new String[] {
-                                                             AngleUnit.DEGREES.toCanonicalString(),
+                                                             AngleUnit.DEGREES.label(),
                                                              AngleUnit.RADIANS
-                                                                     .toCanonicalString() };
+                                                                     .label() };
 
     public AngleUnitSelector( final ClientProperties clientProperties,
                               final boolean applyToolkitCss ) {
@@ -65,11 +65,10 @@ public final class AngleUnitSelector extends TextSelector {
     }
 
     public AngleUnit getAngleUnit() {
-        return AngleUnit.fromCanonicalString( getTextValue() );
+        return AngleUnit.defaultValue().valueOfLabel( getTextValue() );
     }
 
     public void setAngleUnit( final AngleUnit angleUnit ) {
-        setTextValue( angleUnit.toCanonicalString() );
+        setTextValue( angleUnit.label() );
     }
-
 }

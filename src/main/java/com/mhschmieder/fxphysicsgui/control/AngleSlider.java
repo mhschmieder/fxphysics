@@ -125,7 +125,7 @@ public final class AngleSlider extends NumberSlider {
         // NOTE: We set this directly as there currently is no unit conversion,
         // for angles, as radians aren't very useful and we haven't added
         // supports for minutes, seconds, etc.
-        setMeasurementUnitString( AngleUnit.DEGREES.toPresentationString() );
+        setMeasurementUnitString( AngleUnit.DEGREES.abbreviation() );
     }
 
     public void setAngleDegrees( final double angleDegrees ) {

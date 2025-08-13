@@ -38,7 +38,8 @@ import com.mhschmieder.physicstoolkit.DistanceUnit;
  * The Distance Unit selector supports all Distance Units that are currently
  * implemented in our core Math Library.
  * <p>
- * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory.
+ * TODO: Redo as an enum-based XComboBox that provides a List Cell Factory,
+ *  but possibly use the "Choose One" text as a placeholder for null selection?
  */
 public class DistanceUnitSelector extends TextSelector {
 
@@ -47,32 +48,32 @@ public class DistanceUnitSelector extends TextSelector {
     private static final String[] DISTANCE_UNITS_KNOWN     =
                                                        new String[] {
                                                                       DistanceUnit.METERS
-                                                                              .toCanonicalString(),
+                                                                              .label(),
                                                                       DistanceUnit.CENTIMETERS
-                                                                              .toCanonicalString(),
+                                                                              .label(),
                                                                       DistanceUnit.MILLIMETERS
-                                                                              .toCanonicalString(),
+                                                                              .label(),
                                                                       DistanceUnit.YARDS
-                                                                              .toCanonicalString(),
+                                                                              .label(),
                                                                       DistanceUnit.FEET
-                                                                              .toCanonicalString(),
+                                                                              .label(),
                                                                       DistanceUnit.INCHES
-                                                                              .toCanonicalString() };
+                                                                              .label() };
     private static final String[] DISTANCE_UNITS_AMBIGUOUS =
                                                            new String[] {
                                                                           CHOOSE_ONE,
                                                                           DistanceUnit.METERS
-                                                                                  .toCanonicalString(),
+                                                                                  .label(),
                                                                           DistanceUnit.CENTIMETERS
-                                                                                  .toCanonicalString(),
+                                                                                  .label(),
                                                                           DistanceUnit.MILLIMETERS
-                                                                                  .toCanonicalString(),
+                                                                                  .label(),
                                                                           DistanceUnit.YARDS
-                                                                                  .toCanonicalString(),
+                                                                                  .label(),
                                                                           DistanceUnit.FEET
-                                                                                  .toCanonicalString(),
+                                                                                  .label(),
                                                                           DistanceUnit.INCHES
-                                                                                  .toCanonicalString() };
+                                                                                  .label() };
 
     public DistanceUnitSelector( final ClientProperties clientProperties,
                                  final boolean applyToolkitCss,
@@ -85,7 +86,7 @@ public class DistanceUnitSelector extends TextSelector {
                false,
                false,
                10,
-               includeChooseOne ? CHOOSE_ONE : distanceUnit.toCanonicalString(),
+               includeChooseOne ? CHOOSE_ONE : distanceUnit.label(),
                includeChooseOne ? DISTANCE_UNITS_AMBIGUOUS : DISTANCE_UNITS_KNOWN );
     }
 
@@ -93,15 +94,14 @@ public class DistanceUnitSelector extends TextSelector {
         final String distanceUnitString = getTextValue();
         final DistanceUnit distanceUnit = CHOOSE_ONE.equals( distanceUnitString )
             ? DistanceUnit.UNITLESS
-            : DistanceUnit.fromCanonicalString( distanceUnitString );
+            : DistanceUnit.defaultValue().valueOfLabel( distanceUnitString );
         return distanceUnit;
     }
 
     public final void setDistanceUnit( final DistanceUnit distanceUnit ) {
         final String distanceUnitString = DistanceUnit.UNITLESS.equals( distanceUnit )
             ? CHOOSE_ONE
-            : distanceUnit.toCanonicalString();
+            : distanceUnit.label();
         setTextValue( distanceUnitString );
     }
-
 }

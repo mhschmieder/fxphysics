@@ -89,7 +89,7 @@ public final class MeasurementUnitsPane extends VBox {
 
             @Override
             protected String computeValue() {
-                return measurementUnits.getDistanceUnit().toCanonicalString();
+                return measurementUnits.getDistanceUnit().label();
             }
         } );
 
@@ -281,7 +281,7 @@ public final class MeasurementUnitsPane extends VBox {
     // }
 
     public void updateDistanceUnit( final DistanceUnit distanceUnit ) {
-        _distanceUnitSelector.setValue( distanceUnit.toCanonicalString() );
+        _distanceUnitSelector.setValue( distanceUnit.label() );
     }
 
     public void updateMeasurementUnits( final MeasurementUnits pMeasurementsUnits ) {

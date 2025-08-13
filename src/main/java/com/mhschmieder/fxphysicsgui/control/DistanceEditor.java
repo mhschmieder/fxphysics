@@ -150,6 +150,6 @@ public class DistanceEditor extends DoubleEditor {
         setValue( distanceCurrent );
 
         // Set the embedded unit string in the generic number textField.
-        setMeasurementUnitString( _distanceUnit.toPresentationString() );
+        setMeasurementUnitString( _distanceUnit.abbreviation() );
     }
 }

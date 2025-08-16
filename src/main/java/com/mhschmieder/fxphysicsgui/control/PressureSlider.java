@@ -142,7 +142,7 @@ public class PressureSlider extends NumberSlider {
         _pressureUnit = pressureUnit;
 
         // Set the embedded unit label in the generic number slider.
-        setMeasurementUnitString( _pressureUnit.toPresentationString() );
+        setMeasurementUnitString( _pressureUnit.label() );
 
         // NOTE: Sliders must set their adjusted current value before setting
         // the adjusted range, as we pre-set the range to the maximum possible

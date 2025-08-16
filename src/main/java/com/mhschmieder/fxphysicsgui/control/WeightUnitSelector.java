@@ -45,13 +45,13 @@ public final class WeightUnitSelector extends TextSelector {
     private static final String[] WEIGHT_UNITS =
                                                new String[] {
                                                               WeightUnit.METRIC_TONS
-                                                                      .toCanonicalString(),
+                                                                      .label(),
                                                               WeightUnit.KILOGRAMS
-                                                                      .toCanonicalString(),
-                                                              WeightUnit.GRAMS.toCanonicalString(),
-                                                              WeightUnit.POUNDS.toCanonicalString(),
+                                                                      .label(),
+                                                              WeightUnit.GRAMS.label(),
+                                                              WeightUnit.POUNDS.label(),
                                                               WeightUnit.OUNCES
-                                                                      .toCanonicalString() };
+                                                                      .label() };
 
     public WeightUnitSelector( final ClientProperties clientProperties,
                                final boolean applyToolkitCss,
@@ -63,16 +63,16 @@ public final class WeightUnitSelector extends TextSelector {
                false,
                false,
                WEIGHT_UNITS.length,
-               weightUnit.toCanonicalString(),
+               weightUnit.label(),
                WEIGHT_UNITS );
     }
 
     public WeightUnit getWeightUnit() {
-        return WeightUnit.fromCanonicalString( getTextValue() );
+        return WeightUnit.defaultValue().valueOfLabel( getTextValue() );
     }
 
     public void setWeightUnit( final WeightUnit weightUnit ) {
-        setTextValue( weightUnit.toCanonicalString() );
+        setTextValue( weightUnit.label() );
     }
 
 }

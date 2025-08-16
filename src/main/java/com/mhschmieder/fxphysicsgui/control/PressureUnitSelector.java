@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -44,11 +44,11 @@ public final class PressureUnitSelector extends TextSelector {
 
     private static final String[] PRESSURE_UNITS = new String[] {
                                                                   PressureUnit.KILOPASCALS
-                                                                          .toCanonicalString(),
+                                                                          .label(),
                                                                   PressureUnit.PASCALS
-                                                                          .toCanonicalString(),
+                                                                          .label(),
                                                                   PressureUnit.MILLIBARS
-                                                                          .toCanonicalString() };
+                                                                          .label() };
 
     public PressureUnitSelector( final ClientProperties clientProperties,
                                  final boolean applyToolkitCss,
@@ -60,16 +60,15 @@ public final class PressureUnitSelector extends TextSelector {
                false,
                false,
                PRESSURE_UNITS.length,
-               pressureUnitDefault.toCanonicalString(),
+               pressureUnitDefault.label(),
                PRESSURE_UNITS );
     }
 
     public PressureUnit getPressureUnit() {
-        return PressureUnit.fromCanonicalString( getTextValue() );
+        return PressureUnit.defaultValue().valueOfLabel( getTextValue() );
     }
 
     public void setPressureUnit( final PressureUnit pressureUnit ) {
-        setTextValue( pressureUnit.toCanonicalString() );
+        setTextValue( pressureUnit.label() );
     }
-
 }

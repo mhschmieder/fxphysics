@@ -81,7 +81,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
                                                                                PRESSURE_LABEL_LABEL
                                                                                        + " = 101325 "
                                                                                        + PressureUnit.PASCALS
-                                                                                               .toPresentationString();
+                                                                                               .label();
     @SuppressWarnings("nls") public static final String RELATIVE_HUMIDITY_LABEL_DEFAULT =
                                                                                         RELATIVE_HUMIDITY_LABEL_LABEL
                                                                                                 + " = 50%";
@@ -100,7 +100,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
         numberFormat.setMaximumFractionDigits( 2 );
         final String pressureLabel = PRESSURE_LABEL_LABEL + " = "
                 + numberFormat.format( naturalEnvironment.getPressure( pressureUnit ) ) + " "
-                + pressureUnit.toPresentationString();
+                + pressureUnit.label();
         return pressureLabel;
     }
 
@@ -122,7 +122,7 @@ public final class NaturalEnvironmentInformationPane extends VBox {
         numberFormat.setMaximumFractionDigits( 1 );
         final String temperatureLabel = TEMPERATURE_LABEL_LABEL + " = "
                 + numberFormat.format( naturalEnvironment.getTemperature( temperatureUnit ) )
-                + temperatureUnit.toPresentationString();
+                + temperatureUnit.abbreviation();
         return temperatureLabel;
     }
 

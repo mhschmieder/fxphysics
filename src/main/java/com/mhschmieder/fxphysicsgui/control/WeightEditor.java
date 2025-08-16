@@ -143,6 +143,6 @@ public class WeightEditor extends DoubleEditor {
         setValue( weightCurrent );
 
         // Set the embedded unit label in the generic number textField.
-        setMeasurementUnitString( _weightUnit.toPresentationString() );
+        setMeasurementUnitString( _weightUnit.abbreviation() );
     }
 }

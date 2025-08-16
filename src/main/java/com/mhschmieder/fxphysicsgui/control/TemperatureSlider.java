@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -145,7 +145,7 @@ public class TemperatureSlider extends NumberSlider {
         _temperatureUnit = temperatureUnit;
 
         // Set the embedded unit label in the generic number slider.
-        setMeasurementUnitString( _temperatureUnit.toPresentationString() );
+        setMeasurementUnitString( _temperatureUnit.abbreviation() );
 
         // NOTE: Sliders must set their adjusted current value before setting
         // the adjusted range, as we pre-set the range to the maximum possible

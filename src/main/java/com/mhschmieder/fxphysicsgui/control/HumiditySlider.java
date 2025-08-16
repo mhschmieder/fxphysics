@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -91,15 +91,14 @@ public final class HumiditySlider extends NumberSlider {
 
         // Make sure the tick labels aren't bunched together.
         // NOTE: We can't do this on the base class in case the slider's
-        // orientation is vertical, which we only know per context.
+        //  orientation is vertical, which we only know per context.
         // NOTE: This is a safety value that should be overloaded by the parent
-        // node, per usage context.
+        //  node, per usage context.
         setMinHeight( 150d );
 
         // Cache the string representation of the humidity unit.
         // NOTE: We set this directly as there currently is no unit conversion,
-        // for humidity, as relative humidity is what most gauges display.
-        setMeasurementUnitString( HumidityUnit.RELATIVE.toPresentationString() );
+        //  for humidity, as relative humidity is what most gauges display.
+        setMeasurementUnitString( HumidityUnit.RELATIVE.abbreviation() );
     }
-
 }

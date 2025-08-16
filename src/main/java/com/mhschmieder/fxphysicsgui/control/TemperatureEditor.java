@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -135,21 +135,21 @@ public final class TemperatureEditor extends DoubleEditor {
         }
 
         // NOTE: Text Editors must set their adjusted range before setting the
-        // adjusted current value, as we manage value legality within callbacks
-        // that check the locally cached minimum and maximum values.
+        //  adjusted current value, as we manage value legality within callbacks
+        //  that check the locally cached minimum and maximum values.
         // NOTE: Unit conversion is done in the sliders for the doubled-up
-        // controls, so ideally we can move that code to these respective
-        // editors to help make the editors consistently own the data and the
-        // measurement units. The Distance Editor is the model for doing this.
+        //  controls, so ideally we can move that code to these respective
+        //  editors to help make the editors consistently own the data and the
+        //  measurement units. The Distance Editor is the model for doing this.
         // NOTE: The attempted consolidation of bindings strategies ended up
-        // causing too many conflicts and problems, as we aren't handling
-        // sliders and editors consistently so it gets confusing very quickly as
-        // to the order of callbacks and events as well as when and whether unit
-        // conversion has already been applied when values are synced or bound.
+        //  causing too many conflicts and problems, as we aren't handling
+        //  sliders and editors consistently so it gets confusing very quickly as
+        //  to the order of callbacks and events as well as when and whether unit
+        //  conversion has already been applied when values are synced or bound.
         setMinimumTemperatureK( PhysicsConstants.TEMPERATURE_MINIMUM_K );
         setMaximumTemperatureK( PhysicsConstants.TEMPERATURE_MAXIMUM_K );
 
         // Set the embedded unit label in the generic number textField.
-        setMeasurementUnitString( _temperatureUnit.toPresentationString() );
+        setMeasurementUnitString( _temperatureUnit.abbreviation() );
     }
 }

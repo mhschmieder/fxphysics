@@ -150,7 +150,7 @@ public class PressureEditor extends DoubleEditor {
         setMaximumPressurePa( PhysicsConstants.PRESSURE_MAXIMUM_PA );
 
         // Set the embedded unit label in the generic number textField.
-        setMeasurementUnitString( _pressureUnit.toPresentationString() );
+        setMeasurementUnitString( _pressureUnit.label() );
     }
 
 }

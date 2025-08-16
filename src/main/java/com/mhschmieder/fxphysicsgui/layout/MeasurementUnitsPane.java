@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -101,7 +101,7 @@ public final class MeasurementUnitsPane extends VBox {
         //
         // @Override
         // protected String computeValue() {
-        // return measurementUnits.getAngleUnit().toCanonicalString();
+        // return measurementUnits.getAngleUnit().label();
         // }
         // } );
 
@@ -112,7 +112,7 @@ public final class MeasurementUnitsPane extends VBox {
 
             @Override
             protected String computeValue() {
-                return measurementUnits.getWeightUnit().toCanonicalString();
+                return measurementUnits.getWeightUnit().label();
             }
         } );
 
@@ -123,7 +123,7 @@ public final class MeasurementUnitsPane extends VBox {
 
             @Override
             protected String computeValue() {
-                return measurementUnits.getTemperatureUnit().toCanonicalString();
+                return measurementUnits.getTemperatureUnit().label();
             }
         } );
 
@@ -134,7 +134,7 @@ public final class MeasurementUnitsPane extends VBox {
 
             @Override
             protected String computeValue() {
-                return measurementUnits.getPressureUnit().toCanonicalString();
+                return measurementUnits.getPressureUnit().label();
             }
         } );
     }
@@ -277,7 +277,7 @@ public final class MeasurementUnitsPane extends VBox {
     }
 
     // public final void updateAngleUnit( final AngleUnit angleUnit ) {
-    // _angleUnitSelector.setValue( angleUnit.toCanonicalString() );
+    // _angleUnitSelector.setValue( angleUnit.label() );
     // }
 
     public void updateDistanceUnit( final DistanceUnit distanceUnit ) {
@@ -293,15 +293,15 @@ public final class MeasurementUnitsPane extends VBox {
     }
 
     public void updatePressureUnit( final PressureUnit pressureUnit ) {
-        _pressureUnitSelector.setValue( pressureUnit.toCanonicalString() );
+        _pressureUnitSelector.setValue( pressureUnit.label() );
     }
 
     public void updateTemperatureUnit( final TemperatureUnit temperatureUnit ) {
-        _temperatureUnitSelector.setValue( temperatureUnit.toCanonicalString() );
+        _temperatureUnitSelector.setValue( temperatureUnit.label() );
     }
 
     public void updateWeightUnit( final WeightUnit weightUnit ) {
-        _weightUnitSelector.setValue( weightUnit.toCanonicalString() );
+        _weightUnitSelector.setValue( weightUnit.label() );
     }
 
 }

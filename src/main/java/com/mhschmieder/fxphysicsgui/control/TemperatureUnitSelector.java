@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -44,32 +44,32 @@ public final class TemperatureUnitSelector extends TextSelector {
 
     private static final String[] TEMPERATURE_UNITS = new String[] {
                                                                      TemperatureUnit.KELVIN
-                                                                             .toCanonicalString(),
+                                                                             .label(),
                                                                      TemperatureUnit.CELSIUS
-                                                                             .toCanonicalString(),
+                                                                             .label(),
                                                                      TemperatureUnit.FAHRENHEIT
-                                                                             .toCanonicalString() };
+                                                                             .label() };
 
-    public TemperatureUnitSelector( final ClientProperties clientProperties,
+    public TemperatureUnitSelector( final ClientProperties pClientProperties,
                                     final boolean applyToolkitCss,
                                     final TemperatureUnit temperatureUnitDefault ) {
         // Always call the superclass constructor first!
-        super( clientProperties,
+        super( pClientProperties,
                "Supported Temperature Units", //$NON-NLS-1$
                applyToolkitCss,
                false,
                false,
                TEMPERATURE_UNITS.length,
-               temperatureUnitDefault.toCanonicalString(),
+               temperatureUnitDefault.label(),
                TEMPERATURE_UNITS );
     }
 
     public TemperatureUnit getTemperatureUnit() {
-        return TemperatureUnit.fromCanonicalString( getTextValue() );
+        return TemperatureUnit.defaultValue().valueOfLabel( getTextValue() );
     }
 
     public void setTemperatureUnit( final TemperatureUnit temperatureUnit ) {
-        setTextValue( temperatureUnit.toCanonicalString() );
+        setTextValue( temperatureUnit.label() );
     }
 
 }

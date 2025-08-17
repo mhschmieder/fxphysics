@@ -53,7 +53,7 @@ public class PhysicsLabeledActionFactory {
                                          BUNDLE_NAME,
                                          "settings",
                                          "naturalEnvironment",
-                                         "/icons/mhschmieder/NaturalEnvironment16.png" );
+                                         "/icons/mhschmieder/TemperatureCelsius16.png" );
     }
 
     public static XAction getUseAirAttenuationAction( final ClientProperties clientProperties ) {

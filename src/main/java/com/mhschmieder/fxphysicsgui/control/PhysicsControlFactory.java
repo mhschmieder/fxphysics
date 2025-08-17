@@ -31,7 +31,13 @@
 package com.mhschmieder.fxphysicsgui.control;
 
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.fxguitoolkit.control.ListViewUtilities;
+import com.mhschmieder.fxguitoolkit.control.XComboBox;
 import com.mhschmieder.physicstoolkit.AngleUnit;
+import com.mhschmieder.physicstoolkit.DistanceUnit;
+import com.mhschmieder.physicstoolkit.PressureUnit;
+import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.mhschmieder.physicstoolkit.WeightUnit;
 
 /**
  * This is a factory for generating customized controls for physics-based
@@ -238,4 +244,75 @@ public class PhysicsControlFactory {
         return humidityEditor;
     }
 
+    public static XComboBox< DistanceUnit > makeDistanceUnitSelector(
+            final ClientProperties pClientProperties,
+            final boolean applyToolkitCss,
+            final boolean includeUnitless,
+            final DistanceUnit defaultDistanceUnit ) {
+        final DistanceUnit[] distanceUnitsKnown = {
+                DistanceUnit.MILLIMETERS,
+                DistanceUnit.CENTIMETERS,
+                DistanceUnit.METERS,
+                DistanceUnit.INCHES,
+                DistanceUnit.FEET,
+                DistanceUnit.YARDS };         
+        final DistanceUnit[] supportedValues = includeUnitless
+               ? DistanceUnit.values()
+               : distanceUnitsKnown;
+        return ListViewUtilities.makeLabeledSelector(
+                       pClientProperties,
+                       supportedValues,
+                       "Supported Distance Units",
+                       defaultDistanceUnit );
+   }
+
+    public static XComboBox< AngleUnit > makeAngleUnitSelector(
+            final ClientProperties pClientProperties,
+            final boolean applyToolkitCss,
+            final AngleUnit defaultAngleUnit ) {
+        return ListViewUtilities.makeLabeledSelector(
+                        pClientProperties,
+                        AngleUnit.values(),
+                        "Supported Angle Units",
+                        defaultAngleUnit );
+    }
+
+    public static XComboBox< WeightUnit > makeWeightUnitSelector(
+            final ClientProperties pClientProperties,
+            final boolean applyToolkitCss,
+            final WeightUnit defaultWeightUnit ) {
+        return ListViewUtilities.makeLabeledSelector(
+                        pClientProperties,
+                        WeightUnit.values(),
+                        "Supported Weight Units",
+                        defaultWeightUnit );
+    }
+
+    public static XComboBox< TemperatureUnit > makeTemperatureUnitSelector(
+            final ClientProperties pClientProperties,
+            final boolean applyToolkitCss,
+            final TemperatureUnit defaultTemperatureUnit ) {
+        return ListViewUtilities.makeLabeledSelector(
+                        pClientProperties,
+                        TemperatureUnit.values(),
+                        "Supported Temperature Units",
+                        defaultTemperatureUnit );
+    }
+
+    public static XComboBox< PressureUnit > makePressureUnitSelector(
+            final ClientProperties pClientProperties,
+            final boolean applyToolkitCss,
+            final PressureUnit defaultPressureUnit ) {
+        // NOTE: Atmospheres are generally an unwieldy and coarse unit in
+        //  most contexts, so this default convenience method leaves it out.
+        final PressureUnit[] supportedValues = {
+                PressureUnit.KILOPASCALS,
+                PressureUnit.PASCALS,
+                PressureUnit.MILLIBARS };
+        return ListViewUtilities.makeLabeledSelector(
+                        pClientProperties,
+                        supportedValues,
+                        "Supported Pressure Units",
+                        defaultPressureUnit );
+    }
 }

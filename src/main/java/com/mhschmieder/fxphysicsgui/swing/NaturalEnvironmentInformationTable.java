@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -66,13 +66,13 @@ public final class NaturalEnvironmentInformationTable extends DataViewXComponent
 
     // Declare the array of column names to be displayed in the table header.
     // NOTE: These are all empty strings, but are necessary to imply table
-    // width.
+    //  width.
     private final Object[]     _columnNames     = { "" };                                                         //$NON-NLS-1$
 
     // Declare an array of row data to be displayed in the rows of the table.
     // NOTE: The second row is dynamically adjusted; the first row is static.
     // NOTE: The second row cells are not converted to the proper type for
-    // display, but instead are always represented as pre-formatted strings.
+    //  display, but instead are always represented as pre-formatted strings.
     private final Object[][]   _rowData         =
                                         {
                                           {

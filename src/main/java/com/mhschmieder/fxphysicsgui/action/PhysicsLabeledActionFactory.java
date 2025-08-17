@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,8 +36,6 @@ import com.mhschmieder.fxguitoolkit.action.XAction;
 
 /**
  * This is a utility class for making labeled actions for Physics.
- * <p>
- * TODO: Move the icons into the resources folder and reference correctly.
  */
 public class PhysicsLabeledActionFactory {
 
@@ -50,7 +48,6 @@ public class PhysicsLabeledActionFactory {
      */
     private PhysicsLabeledActionFactory() {}
 
-    @SuppressWarnings("nls")
     public static XAction getNaturalEnvironmentAction( final ClientProperties clientProperties ) {
         return ActionFactory.makeAction( clientProperties,
                                          BUNDLE_NAME,
@@ -59,10 +56,11 @@ public class PhysicsLabeledActionFactory {
                                          "/icons/mhschmieder/NaturalEnvironment16.png" );
     }
 
-    @SuppressWarnings("nls")
     public static XAction getUseAirAttenuationAction( final ClientProperties clientProperties ) {
-        return ActionFactory
-                .makeCheck( clientProperties, BUNDLE_NAME, "settings", "useAirAttenuation", null );
+        return ActionFactory.makeCheck( clientProperties, 
+                                        BUNDLE_NAME, 
+                                        "settings", 
+                                        "useAirAttenuation", 
+                                        null );
     }
-
 }

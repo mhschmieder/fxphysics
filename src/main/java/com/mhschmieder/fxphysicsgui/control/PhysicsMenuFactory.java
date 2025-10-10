@@ -30,15 +30,13 @@
  */
 package com.mhschmieder.fxphysicsgui.control;
 
-import java.util.Collection;
-
-import org.controlsfx.control.action.Action;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.action.XActionUtilities;
 import com.mhschmieder.fxphysicsgui.action.NaturalEnvironmentActions;
-
 import javafx.scene.control.MenuBar;
+import org.controlsfx.control.action.Action;
+
+import java.util.Collection;
 
 /**
  * This is a factory class for generating Menus for Physics.

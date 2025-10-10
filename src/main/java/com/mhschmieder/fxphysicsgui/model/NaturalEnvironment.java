@@ -30,20 +30,19 @@
  */
 package com.mhschmieder.fxphysicsgui.model;
 
-import java.util.Objects;
-
 import com.mhschmieder.fxgraphicstoolkit.beans.BeanFactory;
 import com.mhschmieder.physicstoolkit.HumidityUnit;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
 import com.mhschmieder.physicstoolkit.UnitConversion;
-
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+
+import java.util.Objects;
 
 public final class NaturalEnvironment {
 

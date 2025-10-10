@@ -33,7 +33,6 @@ package com.mhschmieder.fxphysicsgui.control;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.NumberSlider;
 import com.mhschmieder.physicstoolkit.HumidityUnit;
-
 import javafx.geometry.Orientation;
 
 public final class HumiditySlider extends NumberSlider {

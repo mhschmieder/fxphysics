@@ -37,7 +37,6 @@ import com.mhschmieder.fxphysicsgui.control.AngleEditor;
 import com.mhschmieder.fxphysicsgui.control.AngleSlider;
 import com.mhschmieder.fxphysicsgui.control.PhysicsControlFactory;
 import com.mhschmieder.physicstoolkit.AngleUnit;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxphysicsgui.layout;
 
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
@@ -41,13 +39,13 @@ import com.mhschmieder.physicstoolkit.DistanceUnit;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
-
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.paint.Color;
+import org.apache.commons.math3.util.FastMath;
 
 public final class NaturalEnvironmentPane extends HBox {
 

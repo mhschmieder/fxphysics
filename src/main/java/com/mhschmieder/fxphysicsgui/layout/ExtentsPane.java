@@ -30,15 +30,12 @@
  */
 package com.mhschmieder.fxphysicsgui.layout;
 
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.geometry.Extents2D;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
-
 import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -47,6 +44,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import org.apache.commons.math3.util.FastMath;
 
 public final class ExtentsPane extends GridPane {
 

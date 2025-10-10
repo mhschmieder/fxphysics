@@ -35,7 +35,6 @@ import com.mhschmieder.fxguitoolkit.control.NumberSlider;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
 import com.mhschmieder.physicstoolkit.UnitConversion;
-
 import javafx.geometry.Orientation;
 
 public class TemperatureSlider extends NumberSlider {

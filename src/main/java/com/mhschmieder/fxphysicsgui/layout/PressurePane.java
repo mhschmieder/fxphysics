@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxphysicsgui.layout;
 
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
@@ -43,7 +41,6 @@ import com.mhschmieder.fxphysicsgui.control.PressureSlider;
 import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.PressureUnit;
-
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -54,6 +51,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import org.apache.commons.math3.util.FastMath;
 
 public final class PressurePane extends VBox {
 

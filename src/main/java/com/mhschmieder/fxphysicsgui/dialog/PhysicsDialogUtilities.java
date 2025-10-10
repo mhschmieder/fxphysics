@@ -30,14 +30,13 @@
  */
 package com.mhschmieder.fxphysicsgui.dialog;
 
-import java.util.Optional;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.MessageFactory;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
-
 import javafx.geometry.Point2D;
 import javafx.scene.control.ButtonType;
+
+import java.util.Optional;
 
 public class PhysicsDialogUtilities {
 

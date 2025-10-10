@@ -42,7 +42,6 @@ import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
-
 import javafx.scene.Node;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.ToolBar;

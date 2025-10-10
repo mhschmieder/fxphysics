@@ -33,7 +33,6 @@ package com.mhschmieder.fxphysicsgui.control;
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
 import com.mhschmieder.fxguitoolkit.action.XAction;
-
 import javafx.scene.control.CheckBox;
 
 public final class PhysicsLabeledControlFactory {

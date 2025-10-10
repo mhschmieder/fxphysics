@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxphysicsgui;
 
-import java.text.NumberFormat;
-
 import com.mhschmieder.fxguitoolkit.DoubleConverter;
+
+import java.text.NumberFormat;
 
 /**
  * Specialized number converter for angles, using double precision but wrapping

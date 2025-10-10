@@ -37,7 +37,6 @@ import com.mhschmieder.fxphysicsgui.action.MeasurementUnitsActions;
 import com.mhschmieder.fxphysicsgui.control.MeasurementUnitsToolBar;
 import com.mhschmieder.fxphysicsgui.layout.MeasurementUnitsPane;
 import com.mhschmieder.fxphysicsgui.model.MeasurementUnits;
-
 import javafx.scene.Node;
 import javafx.scene.control.ToolBar;
 import javafx.scene.input.KeyCode;

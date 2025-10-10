@@ -39,7 +39,6 @@ import com.mhschmieder.physicstoolkit.DistanceUnit;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
 import com.mhschmieder.physicstoolkit.WeightUnit;
-
 import javafx.beans.binding.StringBinding;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

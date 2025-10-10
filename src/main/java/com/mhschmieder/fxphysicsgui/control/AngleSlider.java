@@ -30,14 +30,12 @@
  */
 package com.mhschmieder.fxphysicsgui.control;
 
-import org.apache.commons.math3.util.FastMath;
-
 import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.NumberSlider;
 import com.mhschmieder.mathtoolkit.MathUtilities;
 import com.mhschmieder.physicstoolkit.AngleUnit;
-
 import javafx.geometry.Orientation;
+import org.apache.commons.math3.util.FastMath;
 
 public final class AngleSlider extends NumberSlider {
 

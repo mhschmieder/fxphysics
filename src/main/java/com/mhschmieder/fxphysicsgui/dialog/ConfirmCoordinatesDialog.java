@@ -35,7 +35,6 @@ import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.dialog.XDialog;
 import com.mhschmieder.fxphysicsgui.layout.CartesianPositionPane;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;

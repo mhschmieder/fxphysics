@@ -39,7 +39,6 @@ import com.mhschmieder.fxphysicsgui.control.HumidityEditor;
 import com.mhschmieder.fxphysicsgui.control.HumiditySlider;
 import com.mhschmieder.fxphysicsgui.control.PhysicsControlFactory;
 import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
-
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;

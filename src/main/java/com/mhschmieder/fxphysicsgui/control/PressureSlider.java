@@ -35,7 +35,6 @@ import com.mhschmieder.fxguitoolkit.control.NumberSlider;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.UnitConversion;
-
 import javafx.geometry.Orientation;
 
 public class PressureSlider extends NumberSlider {

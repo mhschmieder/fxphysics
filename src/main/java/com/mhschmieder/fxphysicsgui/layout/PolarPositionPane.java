@@ -36,7 +36,6 @@ import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxphysicsgui.control.DistanceEditor;
 import com.mhschmieder.physicstoolkit.AngleUnit;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
-
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 

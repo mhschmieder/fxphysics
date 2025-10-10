@@ -30,17 +30,16 @@
  */
 package com.mhschmieder.fxphysicsgui.swing;
 
-import java.awt.Dimension;
-import java.text.NumberFormat;
-import java.util.Locale;
-
-import javax.swing.SwingConstants;
-
 import com.mhschmieder.fxphysicsgui.layout.NaturalEnvironmentInformationPane;
 import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.guitoolkit.component.DataViewXComponent;
 import com.mhschmieder.physicstoolkit.PressureUnit;
 import com.mhschmieder.physicstoolkit.TemperatureUnit;
+
+import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  * {@code NaturalEnvironmentInformationTable} is a specialization of

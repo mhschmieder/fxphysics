@@ -37,7 +37,6 @@ import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.physicstoolkit.Altitude;
 import com.mhschmieder.physicstoolkit.DistanceUnit;
 import com.mhschmieder.physicstoolkit.PhysicsConstants;
-
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

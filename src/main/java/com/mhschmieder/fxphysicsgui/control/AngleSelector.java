@@ -34,7 +34,6 @@ import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
 import com.mhschmieder.physicstoolkit.AngleUnit;
 import com.mhschmieder.physicstoolkit.PhysicsUtilities;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.SingleSelectionModel;

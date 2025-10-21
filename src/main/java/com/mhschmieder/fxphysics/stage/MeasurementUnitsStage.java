@@ -30,13 +30,13 @@
  */
 package com.mhschmieder.fxphysics.stage;
 
-import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
 import com.mhschmieder.fxphysics.action.MeasurementUnitsActions;
 import com.mhschmieder.fxphysics.control.MeasurementUnitsToolBar;
 import com.mhschmieder.fxphysics.layout.MeasurementUnitsPane;
 import com.mhschmieder.fxphysics.model.MeasurementUnits;
+import com.mhschmieder.jcommons.branding.ProductBranding;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.Node;
 import javafx.scene.control.ToolBar;
 import javafx.scene.input.KeyCode;

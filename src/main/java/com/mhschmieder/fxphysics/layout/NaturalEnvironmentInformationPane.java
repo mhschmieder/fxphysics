@@ -30,16 +30,16 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.lang.StringConstants;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
-import com.mhschmieder.pdftoolkit.PdfFonts;
-import com.mhschmieder.pdftoolkit.PdfTools;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.mhschmieder.jcommons.lang.StringConstants;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jpdfexport.PdfFonts;
+import com.mhschmieder.jpdfexport.PdfTools;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
 import com.pdfjet.Align;
 import com.pdfjet.PDF;
 import com.pdfjet.Page;

@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxphysics.dialog;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.MessageFactory;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Point2D;
 import javafx.scene.control.ButtonType;
 

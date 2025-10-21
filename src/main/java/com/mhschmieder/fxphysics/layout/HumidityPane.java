@@ -30,7 +30,6 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
@@ -39,6 +38,7 @@ import com.mhschmieder.fxphysics.control.HumidityEditor;
 import com.mhschmieder.fxphysics.control.HumiditySlider;
 import com.mhschmieder.fxphysics.control.PhysicsControlFactory;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;

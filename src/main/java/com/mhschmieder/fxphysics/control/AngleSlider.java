@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.NumberSlider;
-import com.mhschmieder.mathtoolkit.MathUtilities;
-import com.mhschmieder.physicstoolkit.AngleUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jmath.MathUtilities;
+import com.mhschmieder.jphysics.AngleUnit;
 import javafx.geometry.Orientation;
 import org.apache.commons.math3.util.FastMath;
 

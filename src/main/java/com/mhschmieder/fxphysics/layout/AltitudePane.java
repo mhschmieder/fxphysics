@@ -30,13 +30,13 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
-import com.mhschmieder.physicstoolkit.Altitude;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
-import com.mhschmieder.physicstoolkit.PhysicsConstants;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.Altitude;
+import com.mhschmieder.jphysics.DistanceUnit;
+import com.mhschmieder.jphysics.PhysicsConstants;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

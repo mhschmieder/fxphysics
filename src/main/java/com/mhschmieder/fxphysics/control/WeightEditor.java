@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
-import com.mhschmieder.physicstoolkit.UnitConversion;
-import com.mhschmieder.physicstoolkit.WeightUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.UnitConversion;
+import com.mhschmieder.jphysics.WeightUnit;
 
 public class WeightEditor extends DoubleEditor {
 

@@ -30,8 +30,6 @@
  */
 package com.mhschmieder.fxphysics.stage;
 
-import com.mhschmieder.commonstoolkit.branding.ProductBranding;
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.stage.XStage;
 import com.mhschmieder.fxphysics.action.NaturalEnvironmentActions;
@@ -39,9 +37,11 @@ import com.mhschmieder.fxphysics.control.NaturalEnvironmentToolBar;
 import com.mhschmieder.fxphysics.control.PhysicsMenuFactory;
 import com.mhschmieder.fxphysics.layout.NaturalEnvironmentPane;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.mhschmieder.jcommons.branding.ProductBranding;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.DistanceUnit;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
 import javafx.scene.Node;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.ToolBar;

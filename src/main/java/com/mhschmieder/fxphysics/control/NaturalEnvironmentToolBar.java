@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.LabeledControlFactory;
 import com.mhschmieder.fxguitoolkit.control.PredictButtons;
 import com.mhschmieder.fxphysics.action.NaturalEnvironmentActions;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ToolBar;

@@ -33,8 +33,8 @@ package com.mhschmieder.fxphysics.swing;
 import com.mhschmieder.fxphysics.layout.NaturalEnvironmentInformationPane;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
 import com.mhschmieder.guitoolkit.component.DataViewXComponent;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
 
 import javax.swing.SwingConstants;
 import java.awt.Dimension;

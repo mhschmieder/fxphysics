@@ -30,13 +30,13 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxphysics.control.AngleEditor;
 import com.mhschmieder.fxphysics.control.AngleSlider;
 import com.mhschmieder.fxphysics.control.PhysicsControlFactory;
-import com.mhschmieder.physicstoolkit.AngleUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.AngleUnit;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
-import com.mhschmieder.mathtoolkit.MathUtilities;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jmath.MathUtilities;
 import org.apache.commons.math3.util.FastMath;
 
 public class AngleEditor extends DoubleEditor {

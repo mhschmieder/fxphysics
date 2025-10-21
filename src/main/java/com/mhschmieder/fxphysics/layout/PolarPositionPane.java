@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxphysics.control.DistanceEditor;
-import com.mhschmieder.physicstoolkit.AngleUnit;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.AngleUnit;
+import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 

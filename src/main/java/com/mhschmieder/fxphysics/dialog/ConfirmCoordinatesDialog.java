@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxphysics.dialog;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.GuiUtilities;
 import com.mhschmieder.fxguitoolkit.dialog.XDialog;
 import com.mhschmieder.fxphysics.layout.CartesianPositionPane;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;

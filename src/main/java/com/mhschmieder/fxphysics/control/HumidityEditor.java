@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
+import com.mhschmieder.jcommons.util.ClientProperties;
 
 public final class HumidityEditor extends DoubleEditor {
 

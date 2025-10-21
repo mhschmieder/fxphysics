@@ -30,15 +30,15 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
 import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
-import com.mhschmieder.physicstoolkit.Altitude;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
-import com.mhschmieder.physicstoolkit.PhysicsConstants;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.Altitude;
+import com.mhschmieder.jphysics.DistanceUnit;
+import com.mhschmieder.jphysics.PhysicsConstants;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;

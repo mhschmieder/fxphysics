@@ -43,13 +43,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.mhschmieder</groupId>
-			<artifactId>commonstoolkit</artifactId>
+			<artifactId>jcommons</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>physicstoolkit</artifactId>
+            <artifactId>jphysics</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
@@ -66,7 +66,7 @@
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>pdftoolkit</artifactId>
+            <artifactId>jpdfexport</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
 		<!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->

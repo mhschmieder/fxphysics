@@ -30,11 +30,11 @@
  */
 package com.mhschmieder.fxphysics.model;
 
-import com.mhschmieder.physicstoolkit.AngleUnit;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
-import com.mhschmieder.physicstoolkit.WeightUnit;
+import com.mhschmieder.jphysics.AngleUnit;
+import com.mhschmieder.jphysics.DistanceUnit;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
+import com.mhschmieder.jphysics.WeightUnit;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
 import com.mhschmieder.fxguitoolkit.action.XAction;
+import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.CheckBox;
 
 public final class PhysicsLabeledControlFactory {

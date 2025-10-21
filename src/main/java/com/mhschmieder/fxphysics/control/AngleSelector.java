@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
-import com.mhschmieder.physicstoolkit.AngleUnit;
-import com.mhschmieder.physicstoolkit.PhysicsUtilities;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.AngleUnit;
+import com.mhschmieder.jphysics.PhysicsUtilities;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.SingleSelectionModel;

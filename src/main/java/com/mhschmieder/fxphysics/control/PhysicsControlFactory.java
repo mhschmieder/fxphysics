@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,21 @@
  *
  * This file is part of the FxPhysics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxPhysics Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxPhysics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxphysics
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
 import com.mhschmieder.fxguitoolkit.control.ListViewUtilities;
 import com.mhschmieder.fxguitoolkit.control.XComboBox;
-import com.mhschmieder.physicstoolkit.AngleUnit;
-import com.mhschmieder.physicstoolkit.DistanceUnit;
-import com.mhschmieder.physicstoolkit.PressureUnit;
-import com.mhschmieder.physicstoolkit.TemperatureUnit;
-import com.mhschmieder.physicstoolkit.WeightUnit;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jphysics.AngleUnit;
+import com.mhschmieder.jphysics.DistanceUnit;
+import com.mhschmieder.jphysics.PressureUnit;
+import com.mhschmieder.jphysics.TemperatureUnit;
+import com.mhschmieder.jphysics.WeightUnit;
 
 /**
  * This is a factory for generating customized controls for physics-based
@@ -155,25 +155,26 @@ public class PhysicsControlFactory {
     }
 
     // Helper method to get an Angle Editor to pair with a slider.
-    public static final AngleEditor makeAngleSliderEditor( final ClientProperties clientProperties,
-                                                           final AngleSlider angleSlider ) {
-        final AngleEditor angleEditor = makeAngleSliderEditor( clientProperties,
-                                                               angleSlider,
-                                                               0,
-                                                               2,
-                                                               0,
-                                                               10 );
+    public static AngleEditor makeAngleSliderEditor(
+            final ClientProperties clientProperties,
+            final AngleSlider angleSlider ) {
 
-        return angleEditor;
+        return makeAngleSliderEditor(
+                clientProperties,
+                angleSlider,
+                0,
+                2,
+                0,
+                10 );
     }
 
     // Helper method to get an Angle Editor to pair with a slider.
-    public static final AngleEditor makeAngleSliderEditor( final ClientProperties clientProperties,
-                                                           final AngleSlider angleSlider,
-                                                           final int minFractionDigitsFormat,
-                                                           final int maxFractionDigitsFormat,
-                                                           final int minFractionDigitsParse,
-                                                           final int maxFractionDigitsParse ) {
+    public static AngleEditor makeAngleSliderEditor(final ClientProperties clientProperties,
+                                                    final AngleSlider angleSlider,
+                                                    final int minFractionDigitsFormat,
+                                                    final int maxFractionDigitsFormat,
+                                                    final int minFractionDigitsParse,
+                                                    final int maxFractionDigitsParse) {
         // Use the current slider value and limits to set the number textField.
         final AngleEditor angleEditor = makeAngleEditor( clientProperties,
                                                          null,
@@ -190,7 +191,8 @@ public class PhysicsControlFactory {
     }
 
     // Helper method to get a custom Temperature Editor.
-    public static final TemperatureEditor makeTemperatureEditor( final ClientProperties clientProperties ) {
+    public static TemperatureEditor makeTemperatureEditor(
+            final ClientProperties clientProperties ) {
         // Format the default Temperature value as the initial text.
         final double initialValue = TemperatureSlider.INITIAL_TEMPERATURE_KELVIN_DEFAULT;
         final String initialText = Double.toString( initialValue );
@@ -207,25 +209,23 @@ public class PhysicsControlFactory {
     }
 
     // Helper method to get a custom Pressure Editor.
-    public static final PressureEditor makePressureEditor( final ClientProperties clientProperties ) {
+    public static PressureEditor makePressureEditor(final ClientProperties clientProperties) {
         // Format the default Pressure value as the initial text.
         final double initialValue = PressureSlider.INITIAL_PRESSURE_PASCALS_DEFAULT;
         final String initialText = Double.toString( initialValue );
 
-        final PressureEditor pressureEditor =
-                                            new PressureEditor( clientProperties,
-                                                                initialText,
-                                                                null,
-                                                                PressureSlider.MINIMUM_PRESSURE_PASCALS_DEFAULT,
-                                                                PressureSlider.MAXIMUM_PRESSURE_PASCALS_DEFAULT,
-                                                                initialValue );
-
-        return pressureEditor;
+        return new PressureEditor(
+                clientProperties,
+                initialText,
+                null,
+                PressureSlider.MINIMUM_PRESSURE_PASCALS_DEFAULT,
+                PressureSlider.MAXIMUM_PRESSURE_PASCALS_DEFAULT,
+                initialValue );
     }
 
     // Helper method to get a humidity textField to pair with a slider.
-    public static final HumidityEditor makeHumiditySliderEditor( final ClientProperties clientProperties,
-                                                                 final HumiditySlider humiditySlider ) {
+    public static HumidityEditor makeHumiditySliderEditor(final ClientProperties clientProperties,
+                                                          final HumiditySlider humiditySlider) {
         // Get the current slider value and format it as initial text.
         final double initialValue = HumiditySlider.INITIAL_RELATIVE_HUMIDITY_DEFAULT;
         final String initialText = Double.toString( initialValue );

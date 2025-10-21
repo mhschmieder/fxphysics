@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,8 +38,7 @@ import javafx.scene.control.CheckBox;
 public final class PhysicsLabeledControlFactory {
 
     // NOTE: We must substitute "." for resource directory tree delimiters.
-    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "properties.PhysicsActionLabels";
+    public static final String BUNDLE_NAME = "properties.PhysicsActionLabels";
 
     /**
      * The default constructor is disabled, as this is a static factory class.

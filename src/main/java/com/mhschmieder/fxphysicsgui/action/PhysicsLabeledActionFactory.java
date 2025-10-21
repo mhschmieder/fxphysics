@@ -1,4 +1,4 @@
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2020, 2025 Mark Schmieder
@@ -40,8 +40,7 @@ import com.mhschmieder.fxguitoolkit.action.XAction;
 public class PhysicsLabeledActionFactory {
 
     // NOTE: We must substitute "." for resource directory tree delimiters.
-    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "properties.PhysicsActionLabels";
+    public static final String BUNDLE_NAME = "properties.PhysicsActionLabels";
 
     /**
      * The default constructor is disabled, as this is a static factory class.

@@ -41,8 +41,6 @@ import java.util.Objects;
 
 /**
  * This is a properties class for describing extents in 2D Cartesian Space.
- * <p>
- * TODO: Make a non-observable version of this class for use outside the GUI.
  */
 public class Extents2DProperties {
 
@@ -61,7 +59,10 @@ public class Extents2DProperties {
      * Default constructor, which sets default bounds.
      */
     public Extents2DProperties() {
-        this( X_METERS_DEFAULT, Y_METERS_DEFAULT, WIDTH_METERS_DEFAULT, HEIGHT_METERS_DEFAULT );
+        this( X_METERS_DEFAULT,
+                Y_METERS_DEFAULT,
+                WIDTH_METERS_DEFAULT,
+                HEIGHT_METERS_DEFAULT );
     }
 
     /**
@@ -70,8 +71,11 @@ public class Extents2DProperties {
      * @param pBoundary
      *            The {@link Rectangle} to use for setting the fields
      */
-    public Extents2DProperties(final Rectangle pBoundary ) {
-        this( pBoundary.getX(), pBoundary.getY(), pBoundary.getWidth(), pBoundary.getHeight() );
+    public Extents2DProperties( final Rectangle pBoundary ) {
+        this( pBoundary.getX(),
+                pBoundary.getY(),
+                pBoundary.getWidth(),
+                pBoundary.getHeight() );
     }
 
     /**
@@ -80,8 +84,11 @@ public class Extents2DProperties {
      * @param pBounds
      *            The {@link Rectangle2D} to use for setting the fields
      */
-    public Extents2DProperties(final Rectangle2D pBounds ) {
-        this( pBounds.getMinX(), pBounds.getMinY(), pBounds.getWidth(), pBounds.getHeight() );
+    public Extents2DProperties( final Rectangle2D pBounds ) {
+        this( pBounds.getMinX(),
+                pBounds.getMinY(),
+                pBounds.getWidth(),
+                pBounds.getHeight() );
     }
 
     /**
@@ -90,7 +97,7 @@ public class Extents2DProperties {
      * @param computedBounds
      *            The {@link Bounds} to use for setting the fields
      */
-    public Extents2DProperties(final Bounds computedBounds ) {
+    public Extents2DProperties( final Bounds computedBounds ) {
         this( computedBounds.getMinX(),
               computedBounds.getMinY(),
               computedBounds.getWidth(),
@@ -109,10 +116,10 @@ public class Extents2DProperties {
      * @param pHeight
      *            The height to use for the new {@link Extents2DProperties}
      */
-    public Extents2DProperties(final double pX,
-                               final double pY,
-                               final double pWidth,
-                               final double pHeight ) {
+    public Extents2DProperties( final double pX,
+                                final double pY,
+                                final double pWidth,
+                                final double pHeight ) {
         x = new SimpleDoubleProperty( pX );
         y = new SimpleDoubleProperty( pY );
         width = new SimpleDoubleProperty( pWidth );
@@ -125,8 +132,11 @@ public class Extents2DProperties {
      * @param pExtents
      *            The {@link Extents2DProperties} to use for setting the fields
      */
-    public Extents2DProperties(final Extents2DProperties pExtents ) {
-        this( pExtents.getX(), pExtents.getY(), pExtents.getWidth(), pExtents.getHeight() );
+    public Extents2DProperties( final Extents2DProperties pExtents ) {
+        this( pExtents.getX(),
+                pExtents.getY(),
+                pExtents.getWidth(),
+                pExtents.getHeight() );
     }
 
     @Override
@@ -196,21 +206,23 @@ public class Extents2DProperties {
         height.set( pHeight );
     }
 
-    public final Point2D getMaximumPoint() {
-        final Point2D maximumPoint = new Point2D( getX() + getWidth(), getY() + getHeight() );
-        return maximumPoint;
+    public final Point2D getMinimumPoint() {
+        return new Point2D( getX(), getY() );
     }
 
-    public final Point2D getMinimumPoint() {
-        final Point2D minimumPoint = new Point2D( getX(), getY() );
-        return minimumPoint;
+    public final Point2D getMaximumPoint() {
+        return new Point2D( getX() + getWidth(), getY() + getHeight() );
     }
 
     /*
      * Partially qualified copy pseudo-constructor.
      */
     public final void setExtents( final Bounds pBounds ) {
-        setExtents( pBounds.getMinX(), pBounds.getMinY(), pBounds.getWidth(), pBounds.getHeight() );
+        setExtents(
+                pBounds.getMinX(),
+                pBounds.getMinY(),
+                pBounds.getWidth(),
+                pBounds.getHeight() );
     }
 
     /* Partially qualified pseudo-constructor. */
@@ -228,7 +240,10 @@ public class Extents2DProperties {
      * Partially qualified copy pseudo-constructor.
      */
     public final void setExtents( final Extents2DProperties extents ) {
-        setExtents( extents.getX(), extents.getY(), extents.getWidth(), extents.getHeight() );
+        setExtents( extents.getX(),
+                extents.getY(),
+                extents.getWidth(),
+                extents.getHeight() );
     }
 
     /*

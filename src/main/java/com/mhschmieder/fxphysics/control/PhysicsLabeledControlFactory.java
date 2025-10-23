@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxcontrols.SceneGraphUtilities;
 import com.mhschmieder.fxcontrols.action.XAction;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.CheckBox;
 
@@ -47,7 +47,7 @@ public final class PhysicsLabeledControlFactory {
 
     public static CheckBox getUseAirAttenuationCheckBox( final ClientProperties clientProperties,
                                                          final XAction useAirAttenuationAction ) {
-        return SceneGraphUtilities.getLabeledCheckBox( useAirAttenuationAction );
+        return ControlUtilities.getLabeledCheckBox( useAirAttenuationAction );
     }
 
 }

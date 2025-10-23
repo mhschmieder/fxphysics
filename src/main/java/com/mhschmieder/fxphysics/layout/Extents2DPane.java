@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025, Mark Schmieder. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,8 @@
  *
  * This file is part of the FxPhysics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxPhysics Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxPhysics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxphysics
  */
@@ -32,8 +32,8 @@ package com.mhschmieder.fxphysics.layout;
 
 import com.mhschmieder.fxcontrols.GuiUtilities;
 import com.mhschmieder.fxcontrols.layout.LayoutFactory;
-import com.mhschmieder.fxgraphics.geometry.Extents2D;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
+import com.mhschmieder.fxphysics.model.Extents2DProperties;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.application.Platform;
@@ -46,7 +46,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import org.apache.commons.math3.util.FastMath;
 
-public final class ExtentsPane extends GridPane {
+public final class Extents2DPane extends GridPane {
 
     static final double          EPSILON_TOLERANCE = 1e-6;
 
@@ -56,12 +56,12 @@ public final class ExtentsPane extends GridPane {
     public CartesianPositionPane _sizePane;
 
     // Maintain an observable reference to the global Extents.
-    protected Extents2D          extents;
+    protected Extents2DProperties extents;
 
-    public ExtentsPane( final ClientProperties clientProperties,
-                        final double extentsSizeMinimumMeters,
-                        final double extentsSizeMaximumMeters,
-                        final String propertiesCategory ) {
+    public Extents2DPane(final ClientProperties clientProperties,
+                         final double extentsSizeMinimumMeters,
+                         final double extentsSizeMaximumMeters,
+                         final String propertiesCategory ) {
         // Always call the superclass constructor first!
         super();
 
@@ -203,15 +203,15 @@ public final class ExtentsPane extends GridPane {
 
     // Reset all fields to the default values, regardless of state.
     public void reset() {
-        _minimumPane._xPositionEditor.setValue( Extents2D.X_METERS_DEFAULT );
-        _minimumPane._yPositionEditor.setValue( Extents2D.Y_METERS_DEFAULT );
-        _sizePane._xPositionEditor.setValue( Extents2D.WIDTH_METERS_DEFAULT );
-        _sizePane._yPositionEditor.setValue( Extents2D.HEIGHT_METERS_DEFAULT );
+        _minimumPane._xPositionEditor.setValue( Extents2DProperties.X_METERS_DEFAULT );
+        _minimumPane._yPositionEditor.setValue( Extents2DProperties.Y_METERS_DEFAULT );
+        _sizePane._xPositionEditor.setValue( Extents2DProperties.WIDTH_METERS_DEFAULT );
+        _sizePane._yPositionEditor.setValue( Extents2DProperties.HEIGHT_METERS_DEFAULT );
     }
 
     // Set and bind the Extents reference.
     // NOTE: This should be done only once, to avoid breaking bindings.
-    public void setExtents( final Extents2D pExtents ) {
+    public void setExtents( final Extents2DProperties pExtents ) {
         // Cache the new Extents.
         extents = pExtents;
 

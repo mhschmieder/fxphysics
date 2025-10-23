@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxgraphicstoolkit.geometry.Extents2D;
-import com.mhschmieder.fxgraphicstoolkit.paint.ColorUtilities;
-import com.mhschmieder.fxguitoolkit.GuiUtilities;
-import com.mhschmieder.fxguitoolkit.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxgraphics.geometry.Extents2D;
+import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.application.Platform;

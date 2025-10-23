@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.control.DoubleSelector;
+import com.mhschmieder.fxcontrols.control.DoubleSelector;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.AngleUnit;
 import com.mhschmieder.jphysics.PhysicsUtilities;

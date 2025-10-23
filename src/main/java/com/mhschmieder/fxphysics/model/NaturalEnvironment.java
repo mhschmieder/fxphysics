@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.model;
 
-import com.mhschmieder.fxgraphicstoolkit.beans.BeanFactory;
+import com.mhschmieder.fxgraphics.beans.BeanFactory;
 import com.mhschmieder.jphysics.HumidityUnit;
 import com.mhschmieder.jphysics.PhysicsConstants;
 import com.mhschmieder.jphysics.PressureUnit;

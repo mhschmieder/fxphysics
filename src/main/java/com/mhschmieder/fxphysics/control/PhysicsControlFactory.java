@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.control.ListViewUtilities;
-import com.mhschmieder.fxguitoolkit.control.XComboBox;
+import com.mhschmieder.fxcontrols.control.ListViewUtilities;
+import com.mhschmieder.fxcontrols.control.XComboBox;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.AngleUnit;
 import com.mhschmieder.jphysics.DistanceUnit;

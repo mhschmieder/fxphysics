@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.action;
 
-import com.mhschmieder.fxguitoolkit.action.XAction;
+import com.mhschmieder.fxcontrols.action.XAction;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import org.controlsfx.control.action.Action;
 
@@ -45,7 +45,7 @@ public final class MeasurementUnitsActions {
     public XAction _resetAction;
 
     public MeasurementUnitsActions( final ClientProperties pClientProperties ) {
-        _resetAction = com.mhschmieder.fxguitoolkit.action.LabeledActionFactory.getResetAction( pClientProperties );
+        _resetAction = com.mhschmieder.fxcontrols.action.LabeledActionFactory.getResetAction( pClientProperties );
 
         // The tool tip for "Reset" is unique per context so isn't in the
         // locale-sensitive resources for the generic action lookup.

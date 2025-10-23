@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.SceneGraphUtilities;
-import com.mhschmieder.fxguitoolkit.action.XAction;
+import com.mhschmieder.fxcontrols.SceneGraphUtilities;
+import com.mhschmieder.fxcontrols.action.XAction;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.CheckBox;
 

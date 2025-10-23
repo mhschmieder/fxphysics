@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.stage;
 
-import com.mhschmieder.fxgraphicstoolkit.input.ScrollingSensitivity;
-import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.fxcontrols.stage.XStage;
+import com.mhschmieder.fxgraphics.input.ScrollingSensitivity;
 import com.mhschmieder.fxphysics.action.NaturalEnvironmentActions;
 import com.mhschmieder.fxphysics.control.NaturalEnvironmentToolBar;
 import com.mhschmieder.fxphysics.control.PhysicsMenuFactory;

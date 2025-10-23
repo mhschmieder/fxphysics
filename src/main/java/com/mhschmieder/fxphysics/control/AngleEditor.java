@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.control.DoubleEditor;
+import com.mhschmieder.fxcontrols.control.DoubleEditor;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jmath.MathUtilities;
 import org.apache.commons.math3.util.FastMath;

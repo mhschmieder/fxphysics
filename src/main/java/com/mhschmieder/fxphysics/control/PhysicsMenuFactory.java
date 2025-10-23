@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.action.XActionUtilities;
+import com.mhschmieder.fxcontrols.action.XActionUtilities;
 import com.mhschmieder.fxphysics.action.NaturalEnvironmentActions;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.control.MenuBar;

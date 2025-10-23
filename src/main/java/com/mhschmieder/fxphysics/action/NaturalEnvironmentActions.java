@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.fxphysics.action;
 
-import com.mhschmieder.fxguitoolkit.action.FileActions;
-import com.mhschmieder.fxguitoolkit.action.LabeledActionFactory;
-import com.mhschmieder.fxguitoolkit.action.SettingsActions;
-import com.mhschmieder.fxguitoolkit.action.SimulationActions;
-import com.mhschmieder.fxguitoolkit.action.XAction;
-import com.mhschmieder.fxguitoolkit.action.XActionGroup;
+import com.mhschmieder.fxcontrols.action.FileActions;
+import com.mhschmieder.fxcontrols.action.LabeledActionFactory;
+import com.mhschmieder.fxcontrols.action.SettingsActions;
+import com.mhschmieder.fxcontrols.action.SimulationActions;
+import com.mhschmieder.fxcontrols.action.XAction;
+import com.mhschmieder.fxcontrols.action.XActionGroup;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.paint.Color;
 import org.controlsfx.control.action.Action;

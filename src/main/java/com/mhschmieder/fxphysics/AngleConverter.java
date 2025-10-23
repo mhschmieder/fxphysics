@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics;
 
-import com.mhschmieder.fxguitoolkit.DoubleConverter;
+import com.mhschmieder.fxcontrols.DoubleConverter;
 
 import java.text.NumberFormat;
 

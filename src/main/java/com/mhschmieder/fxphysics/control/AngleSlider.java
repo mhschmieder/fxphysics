@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.control;
 
-import com.mhschmieder.fxguitoolkit.control.NumberSlider;
+import com.mhschmieder.fxcontrols.control.NumberSlider;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jmath.MathUtilities;
 import com.mhschmieder.jphysics.AngleUnit;

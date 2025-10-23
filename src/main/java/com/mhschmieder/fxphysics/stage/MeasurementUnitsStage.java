@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.stage;
 
-import com.mhschmieder.fxguitoolkit.stage.XStage;
+import com.mhschmieder.fxcontrols.stage.XStage;
 import com.mhschmieder.fxphysics.action.MeasurementUnitsActions;
 import com.mhschmieder.fxphysics.control.MeasurementUnitsToolBar;
 import com.mhschmieder.fxphysics.layout.MeasurementUnitsPane;

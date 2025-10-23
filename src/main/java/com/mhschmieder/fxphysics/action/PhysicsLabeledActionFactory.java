@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.action;
 
-import com.mhschmieder.fxguitoolkit.action.ActionFactory;
-import com.mhschmieder.fxguitoolkit.action.XAction;
+import com.mhschmieder.fxcontrols.action.ActionFactory;
+import com.mhschmieder.fxcontrols.action.XAction;
 import com.mhschmieder.jcommons.util.ClientProperties;
 
 /**

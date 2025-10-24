@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/fxphysics
  */
-package com.mhschmieder.fxphysics;
+package com.mhschmieder.fxphysics.util;
 
 import com.mhschmieder.fxphysics.model.Extents2DProperties;
 import com.mhschmieder.jphysics.DistanceUnit;

@@ -28,33 +28,11 @@
  *
  * Project: https://github.com/mhschmieder/fxphysics
  */
-package com.mhschmieder.fxphysicscontrols.action;
-
-import com.mhschmieder.fxcontrols.action.XAction;
-import com.mhschmieder.jcommons.util.ClientProperties;
-import org.controlsfx.control.action.Action;
-
-import java.util.Arrays;
-import java.util.Collection;
-
 /**
- * This is a struct-like container for actions used by Measurement Units.
+ * This package contains the FxPhysics Library's highest-level classes.
+ *
+ * @version 1.0
+ *
+ * @author Mark Schmieder
  */
-public final class MeasurementUnitsActions {
-
-    public XAction _resetAction;
-
-    public MeasurementUnitsActions( final ClientProperties pClientProperties ) {
-        _resetAction = com.mhschmieder.fxcontrols.action.LabeledActionFactory.getResetAction( pClientProperties );
-
-        // The tool tip for "Reset" is unique per context so isn't in the
-        // locale-sensitive resources for the generic action lookup.
-        _resetAction.setLongText( "Reset to Default Scientific Units" ); //$NON-NLS-1$
-    }
-
-    public Collection< Action > getMeasurementUnitsActionCollection() {
-        final Collection< Action > measurementUnitsActionCollection = Arrays.asList( _resetAction );
-
-        return measurementUnitsActionCollection;
-    }
-}
+package com.mhschmieder.fxphysicsgui;

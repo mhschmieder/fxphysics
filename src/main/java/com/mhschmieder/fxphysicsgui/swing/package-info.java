@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2020, 2025, Mark Schmieder. All rights reserved.
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the fxphysicscontrols Library
+ * This file is part of the FxPhysics Library
  *
- * You should have received a copy of the MIT License along with the
- * fxphysicscontrols Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxPhysics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxphysicscontrols
+ * Project: https://github.com/mhschmieder/fxphysics
  */
 /**
- * This package contains the fxphysicscontrols Library's highest-level classes.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
+ * This package is for physics Swing wrappers used in JavaFX host contexts.
  */
-package com.mhschmieder.fxphysicscontrols;
+package com.mhschmieder.fxphysicsgui.swing;

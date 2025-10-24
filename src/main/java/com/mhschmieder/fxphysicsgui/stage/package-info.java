@@ -23,31 +23,12 @@
  *
  * This file is part of the FxPhysics Library
  *
- * You should have received a copy of the MIT License along with the
- * FxPhysics Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the FxPhysics
+ * Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/fxphysics
  */
-package com.mhschmieder.fxphysicscontrols.control;
-
-import com.mhschmieder.fxcontrols.action.XAction;
-import com.mhschmieder.fxcontrols.control.ControlUtilities;
-import com.mhschmieder.jcommons.util.ClientProperties;
-import javafx.scene.control.CheckBox;
-
-public final class PhysicsLabeledControlFactory {
-
-    // NOTE: We must substitute "." for resource directory tree delimiters.
-    public static final String BUNDLE_NAME = "properties.PhysicsActionLabels";
-
-    /**
-     * The default constructor is disabled, as this is a static factory class.
-     */
-    private PhysicsLabeledControlFactory() {}
-
-    public static CheckBox getUseAirAttenuationCheckBox( final ClientProperties clientProperties,
-                                                         final XAction useAirAttenuationAction ) {
-        return ControlUtilities.getLabeledCheckBox( useAirAttenuationAction );
-    }
-
-}
+/**
+ * Stage and Stage-related support for physics using JavaFX.
+ */
+package com.mhschmieder.fxphysicsgui.stage;

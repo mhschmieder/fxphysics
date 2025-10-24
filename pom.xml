@@ -6,13 +6,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mhschmieder</groupId>
-    <artifactId>fxphysicscontrols</artifactId>
+    <artifactId>fxphysicsgui</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>fxphysicscontrols</name>
-	<url>https://github.com/mhschmieder/fxphysicscontrols</url>
-	<description>JavaFX GUI controls for jphysics.</description>
+	<name>fxphysicsgui</name>
+	<url>https://github.com/mhschmieder/fxphysicsgui</url>
+	<description>JavaFX GUI and observable properties for jphysiocs.</description>
 
 	<licenses>
 		<license>
@@ -23,9 +23,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/mhschmieder/fxphysicscontrols</url>
-		<connection>scm:git:git://github.com/mhschmieder/fxphysicscontrols.git</connection>
-		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysicscontrols.git</developerConnection>
+		<url>https://github.com/mhschmieder/fxphysicsgui</url>
+		<connection>scm:git:git://github.com/mhschmieder/fxphysicsgui.git</connection>
+		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysicsgui.git</developerConnection>
 	</scm>
 
 	<developers>
@@ -62,6 +62,11 @@
         <dependency>
             <groupId>com.mhschmieder</groupId>
             <artifactId>fxcontrols</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mhschmieder</groupId>
+            <artifactId>fxphysicscontrols</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

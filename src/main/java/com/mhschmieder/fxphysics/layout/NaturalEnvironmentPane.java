@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.input.ScrollingSensitivity;
 import com.mhschmieder.fxphysics.model.NaturalEnvironment;
 import com.mhschmieder.jcommons.util.ClientProperties;
@@ -161,7 +161,7 @@ public final class NaturalEnvironmentPane extends HBox {
 
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         // Forward this method to the lower-level layout containers.

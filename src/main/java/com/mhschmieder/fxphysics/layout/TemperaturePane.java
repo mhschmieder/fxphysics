@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
-import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.input.ScrollingSensitivity;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
+import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.fxphysics.control.PhysicsControlFactory;
 import com.mhschmieder.fxphysics.control.TemperatureEditor;
 import com.mhschmieder.fxphysics.control.TemperatureSlider;
@@ -146,7 +146,7 @@ public final class TemperaturePane extends VBox {
 
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         final Color foregroundColor = ColorUtilities.getForegroundFromBackground( backColor );

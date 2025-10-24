@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.fxcontrols.control.XComboBox;
 import com.mhschmieder.fxphysics.control.PhysicsControlFactory;
 import com.mhschmieder.fxphysics.model.MeasurementUnits;
@@ -138,7 +138,7 @@ public final class MeasurementUnitsPane extends VBox {
     }
 
     private void initPane( final ClientProperties pClientProperties ) {
-        final Label distanceUnitLabel = GuiUtilities.getControlLabel( "Distance Unit" );
+        final Label distanceUnitLabel = ControlUtilities.getControlLabel( "Distance Unit" );
         distanceUnitSelector = PhysicsControlFactory.makeDistanceUnitSelector( 
                 pClientProperties,
                 true,
@@ -153,19 +153,19 @@ public final class MeasurementUnitsPane extends VBox {
                 AngleUnit.defaultValue() );
         */
 
-        final Label weightUnitLabel = GuiUtilities.getControlLabel( "Weight Unit" );
+        final Label weightUnitLabel = ControlUtilities.getControlLabel( "Weight Unit" );
         weightUnitSelector = PhysicsControlFactory.makeWeightUnitSelector( 
                 pClientProperties,
                 true,
                 WeightUnit.defaultValue() );
 
-        final Label temperatureUnitLabel = GuiUtilities.getControlLabel( "Temperature Unit" );
+        final Label temperatureUnitLabel = ControlUtilities.getControlLabel( "Temperature Unit" );
         temperatureUnitSelector = PhysicsControlFactory.makeTemperatureUnitSelector( 
                 pClientProperties,
                 true,
                 TemperatureUnit.defaultValue() );
 
-        final Label pressureUnitLabel = GuiUtilities.getControlLabel( "Pressure Unit" );
+        final Label pressureUnitLabel = ControlUtilities.getControlLabel( "Pressure Unit" );
         pressureUnitSelector = PhysicsControlFactory.makePressureUnitSelector( 
                 pClientProperties,
                 true,

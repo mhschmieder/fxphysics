@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.fxgraphics.input.ScrollingSensitivity;
 import com.mhschmieder.fxphysics.control.AngleEditor;
 import com.mhschmieder.fxphysics.control.AngleSlider;
@@ -73,7 +73,7 @@ public class AnglePane extends VBox {
                      PhysicsControlFactory.makeAngleSliderEditor( clientProperties, _angleSlider );
         _angleEditor.setPrefWidth( 70d );
 
-        final Label angleLabel = GuiUtilities.getControlLabel( labelText );
+        final Label angleLabel = ControlUtilities.getControlLabel( labelText );
 
         final HBox hbox = new HBox();
         hbox.getChildren().addAll( angleLabel, _angleEditor );

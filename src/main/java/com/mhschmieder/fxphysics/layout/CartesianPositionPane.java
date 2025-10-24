@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
-import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
 import com.mhschmieder.fxphysics.control.DistanceEditor;
 import com.mhschmieder.jcommons.util.ClientProperties;
@@ -100,11 +100,11 @@ public class CartesianPositionPane extends BorderPane {
         gridPane.setHgap( 10.0d );
         gridPane.setVgap( 10.0d );
 
-        _xPositionLabel = GuiUtilities.getControlLabel( xPositionLabelText );
+        _xPositionLabel = ControlUtilities.getControlLabel( xPositionLabelText );
         gridPane.add( _xPositionLabel, 0, 0 );
         gridPane.add( _xPositionEditor, 1, 0 );
 
-        _yPositionLabel = GuiUtilities.getControlLabel( yPositionLabelText );
+        _yPositionLabel = ControlUtilities.getControlLabel( yPositionLabelText );
         gridPane.add( _yPositionLabel, 0, 1 );
         gridPane.add( _yPositionEditor, 1, 1 );
 
@@ -132,7 +132,7 @@ public class CartesianPositionPane extends BorderPane {
 
     public final void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         // Forward this method to the lower-level layout containers.

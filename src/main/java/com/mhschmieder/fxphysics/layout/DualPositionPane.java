@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Insets;
@@ -75,9 +75,9 @@ public class DualPositionPane extends GridPane {
                                  final String mainPositionLabel,
                                  final String alternatePositionLabel ) {
         final ToggleGroup dualPositionToggleGroup = new ToggleGroup();
-        _mainPositionRadioButton = GuiUtilities
+        _mainPositionRadioButton = ControlUtilities
                 .getRadioButton( mainPositionLabel, dualPositionToggleGroup, false );
-        _alternatePositionRadioButton = GuiUtilities
+        _alternatePositionRadioButton = ControlUtilities
                 .getRadioButton( alternatePositionLabel, dualPositionToggleGroup, true );
 
         _mainPositionPane = new CartesianPositionPane( clientProperties );

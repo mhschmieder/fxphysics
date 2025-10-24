@@ -30,9 +30,10 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
-import com.mhschmieder.fxcontrols.layout.LayoutFactory;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
+import com.mhschmieder.fxcontrols.util.RegionUtilities;
 import com.mhschmieder.fxgraphics.paint.ColorUtilities;
+import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.Altitude;
 import com.mhschmieder.jphysics.DistanceUnit;
@@ -92,11 +93,11 @@ public final class AltitudePane extends BorderPane {
 
         _altitudeToggleGroup = new ToggleGroup();
         final DistanceUnit defaultDistanceUnit = DistanceUnit.defaultValue();
-        _lowAltitudeRadioButton = GuiUtilities.getRadioButton( Altitude.LOW
+        _lowAltitudeRadioButton = ControlUtilities.getRadioButton( Altitude.LOW
                 .toPresentationString( defaultDistanceUnit ), _altitudeToggleGroup, true );
-        _mediumAltitudeRadioButton = GuiUtilities.getRadioButton( Altitude.MEDIUM
+        _mediumAltitudeRadioButton = ControlUtilities.getRadioButton( Altitude.MEDIUM
                 .toPresentationString( defaultDistanceUnit ), _altitudeToggleGroup, false );
-        _highAltitudeRadioButton = GuiUtilities.getRadioButton( Altitude.HIGH
+        _highAltitudeRadioButton = ControlUtilities.getRadioButton( Altitude.HIGH
                 .toPresentationString( defaultDistanceUnit ), _altitudeToggleGroup, false );
 
         _customAltitudeRadioButton = new RadioButton();
@@ -160,7 +161,7 @@ public final class AltitudePane extends BorderPane {
 
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = LayoutFactory.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground( backColor );
         setBackground( background );
 
         final Color foregroundColor = ColorUtilities.getForegroundFromBackground( backColor );

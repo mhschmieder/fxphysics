@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.fxphysics.layout;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
+import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.fxgraphics.input.ScrollingSensitivity;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.AngleUnit;
@@ -78,10 +78,10 @@ public class PositioningPane extends GridPane {
 
     private final void initPane( final ClientProperties clientProperties ) {
         final ToggleGroup dualPositionToggleGroup = new ToggleGroup();
-        _cartesianPositionRadioButton = GuiUtilities.getRadioButton( "Cartesian Coordinates", //$NON-NLS-1$
+        _cartesianPositionRadioButton = ControlUtilities.getRadioButton( "Cartesian Coordinates", //$NON-NLS-1$
                                                                      dualPositionToggleGroup,
                                                                      true );
-        _polarPositionRadioButton = GuiUtilities.getRadioButton( "Polar Coordinates", //$NON-NLS-1$
+        _polarPositionRadioButton = ControlUtilities.getRadioButton( "Polar Coordinates", //$NON-NLS-1$
                                                                  dualPositionToggleGroup,
                                                                  false );
 

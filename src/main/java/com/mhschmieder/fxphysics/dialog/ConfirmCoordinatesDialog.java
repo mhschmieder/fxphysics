@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.fxphysics.dialog;
 
-import com.mhschmieder.fxcontrols.GuiUtilities;
-import com.mhschmieder.fxcontrols.dialog.XDialog;
+import com.mhschmieder.fxgui.dialog.XDialog;
+import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.fxphysics.layout.CartesianPositionPane;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;

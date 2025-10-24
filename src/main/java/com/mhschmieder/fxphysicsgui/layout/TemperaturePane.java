@@ -37,7 +37,7 @@ import com.mhschmieder.fxgui.util.GuiUtilities;
 import com.mhschmieder.fxphysicscontrols.control.PhysicsControlFactory;
 import com.mhschmieder.fxphysicscontrols.control.TemperatureEditor;
 import com.mhschmieder.fxphysicscontrols.control.TemperatureSlider;
-import com.mhschmieder.fxphysicscontrols.model.NaturalEnvironment;
+import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.PhysicsConstants;
 import com.mhschmieder.jphysics.TemperatureUnit;
@@ -141,15 +141,18 @@ public final class TemperaturePane extends VBox {
     }
 
     public void reset() {
-        _temperatureSlider.setTemperatureK( NaturalEnvironment.TEMPERATURE_K_DEFAULT );
+        _temperatureSlider.setTemperatureK(
+                NaturalEnvironment.TEMPERATURE_K_DEFAULT );
     }
 
     public void setForegroundFromBackground( final Color backColor ) {
         // Set the new Background first, so it sets context for CSS derivations.
-        final Background background = RegionUtilities.makeRegionBackground( backColor );
+        final Background background = RegionUtilities.makeRegionBackground(
+                backColor );
         setBackground( background );
 
-        final Color foregroundColor = ColorUtilities.getForegroundFromBackground( backColor );
+        final Color foregroundColor = ColorUtilities.getForegroundFromBackground(
+                backColor );
         _temperatureLabel.setTextFill( foregroundColor );
     }
 

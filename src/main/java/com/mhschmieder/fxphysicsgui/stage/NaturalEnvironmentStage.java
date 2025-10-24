@@ -35,8 +35,8 @@ import com.mhschmieder.fxgui.stage.XStage;
 import com.mhschmieder.fxphysicscontrols.action.NaturalEnvironmentActions;
 import com.mhschmieder.fxphysicscontrols.control.NaturalEnvironmentToolBar;
 import com.mhschmieder.fxphysicscontrols.control.PhysicsMenuFactory;
-import com.mhschmieder.fxphysicscontrols.layout.NaturalEnvironmentPane;
-import com.mhschmieder.fxphysicscontrols.model.NaturalEnvironment;
+import com.mhschmieder.fxphysicsgui.layout.NaturalEnvironmentPane;
+import com.mhschmieder.fxphysicsgui.model.NaturalEnvironment;
 import com.mhschmieder.jcommons.branding.ProductBranding;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
@@ -68,10 +68,10 @@ public final class NaturalEnvironmentStage extends XStage {
     public NaturalEnvironmentToolBar _toolBar;
 
     // Declare the main content pane.
-    public NaturalEnvironmentPane    _naturalEnvironmentPane;
+    public NaturalEnvironmentPane _naturalEnvironmentPane;
 
     // Cache a reference to the global Natural Environment.
-    public NaturalEnvironment        _naturalEnvironment;
+    public NaturalEnvironment _naturalEnvironment;
     
     // Flag for whether vector graphics are supported.
     protected final boolean _vectorGraphicsSupported;

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2020, 2025 Mark Schmieder
+ * Copyright (c) 2020, 2025, Mark Schmieder. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxPhysics Library
+ * This file is part of the fxphysicsgui Library
  *
- * You should have received a copy of the MIT License along with the FxPhysics
- * Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the
+ * fxphysicsgui Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxphysics
+ * Project: https://github.com/mhschmieder/fxphysicsgui
  */
 /**
- * This package contains the FxPhysics Library's highest-level classes.
+ * This package contains the fxphysicsgui Library's highest-level classes.
  *
  * @version 1.0
  *

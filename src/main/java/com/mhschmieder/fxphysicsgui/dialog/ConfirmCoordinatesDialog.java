@@ -32,7 +32,7 @@ package com.mhschmieder.fxphysicsgui.dialog;
 
 import com.mhschmieder.fxgui.dialog.XDialog;
 import com.mhschmieder.fxgui.util.GuiUtilities;
-import com.mhschmieder.fxphysicscontrols.layout.CartesianPositionPane;
+import com.mhschmieder.fxphysicsgui.layout.CartesianPositionPane;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import javafx.geometry.Insets;

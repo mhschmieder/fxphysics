@@ -21,16 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the FxPhysics Library.
+ * This file is part of the fxphysicsgui Library.
  *
- * You should have received a copy of the MIT License along with the FxPhysics
- * Library. If not, see <https://opensource.org/licenses/MIT>.
+ * You should have received a copy of the MIT License along with the
+ * fxphysicsgui Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/fxphysics
+ * Project: https://github.com/mhschmieder/fxphysicsgui
  */
 package com.mhschmieder.fxphysicsgui.util;
 
-import com.mhschmieder.fxphysicscontrols.model.Extents2DProperties;
+import com.mhschmieder.fxphysicsgui.model.Extents2DProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import com.mhschmieder.jphysics.UnitConversion;
 import javafx.geometry.BoundingBox;

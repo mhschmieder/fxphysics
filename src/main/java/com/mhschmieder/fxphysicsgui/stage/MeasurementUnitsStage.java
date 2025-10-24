@@ -33,8 +33,8 @@ package com.mhschmieder.fxphysicsgui.stage;
 import com.mhschmieder.fxgui.stage.XStage;
 import com.mhschmieder.fxphysicscontrols.action.MeasurementUnitsActions;
 import com.mhschmieder.fxphysicscontrols.control.MeasurementUnitsToolBar;
-import com.mhschmieder.fxphysicscontrols.layout.MeasurementUnitsPane;
-import com.mhschmieder.fxphysicscontrols.model.MeasurementUnits;
+import com.mhschmieder.fxphysicsgui.layout.MeasurementUnitsPane;
+import com.mhschmieder.fxphysicsgui.model.MeasurementUnits;
 import com.mhschmieder.jcommons.branding.ProductBranding;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import javafx.scene.Node;
@@ -58,7 +58,7 @@ public final class MeasurementUnitsStage extends XStage {
     public MeasurementUnitsToolBar _toolBar;
 
     // Declare the main content pane.
-    public MeasurementUnitsPane    _measurementUnitsPane;
+    public MeasurementUnitsPane _measurementUnitsPane;
 
     @SuppressWarnings("nls")
     public MeasurementUnitsStage( final boolean needDistanceUnits,

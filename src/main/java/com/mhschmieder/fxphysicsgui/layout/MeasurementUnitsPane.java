@@ -33,7 +33,7 @@ package com.mhschmieder.fxphysicsgui.layout;
 import com.mhschmieder.fxcontrols.control.ControlUtilities;
 import com.mhschmieder.fxcontrols.control.XComboBox;
 import com.mhschmieder.fxphysicscontrols.control.PhysicsControlFactory;
-import com.mhschmieder.fxphysicscontrols.model.MeasurementUnits;
+import com.mhschmieder.fxphysicsgui.model.MeasurementUnits;
 import com.mhschmieder.jcommons.util.ClientProperties;
 import com.mhschmieder.jphysics.DistanceUnit;
 import com.mhschmieder.jphysics.PressureUnit;
@@ -55,7 +55,7 @@ public final class MeasurementUnitsPane extends VBox {
     protected XComboBox< PressureUnit > pressureUnitSelector;
 
     // Cache a reference to the global Measurement Units.
-    protected MeasurementUnits        measurementUnits;
+    protected MeasurementUnits measurementUnits;
 
     public MeasurementUnitsPane( final ClientProperties clientProperties ) {
         // Always call the superclass constructor first!

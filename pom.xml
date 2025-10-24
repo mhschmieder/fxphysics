@@ -6,13 +6,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mhschmieder</groupId>
-    <artifactId>fxphysics</artifactId>
+    <artifactId>fxphysicscontrols</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>fxphysics</name>
-	<url>https://github.com/mhschmieder/fxphysics</url>
-	<description>JavaFX GUI and observable properties for physics concepts.</description>
+	<name>fxphysicscontrols</name>
+	<url>https://github.com/mhschmieder/fxphysicscontrols</url>
+	<description>JavaFX GUI controls for jphysics.</description>
 
 	<licenses>
 		<license>
@@ -23,9 +23,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/mhschmieder/fxphysics</url>
-		<connection>scm:git:git://github.com/mhschmieder/fxphysics.git</connection>
-		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysics.git</developerConnection>
+		<url>https://github.com/mhschmieder/fxphysicscontrols</url>
+		<connection>scm:git:git://github.com/mhschmieder/fxphysicscontrols.git</connection>
+		<developerConnection>scm:git:git@github.com:mhschmieder/fxphysicscontrols.git</developerConnection>
 	</scm>
 
 	<developers>
@@ -66,7 +66,7 @@
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>jpdfexport</artifactId>
+            <artifactId>jpdfreport</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
 		<!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
